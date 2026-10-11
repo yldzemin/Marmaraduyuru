@@ -5,9 +5,11 @@ Akış:
 1) `sites.json` (site kataloğu) + `secilecek_siteler.txt` (kullanıcının hangi
    siteleri izlemek istediği) birleştirilip izlenecek site listesi çıkarılır.
 2) Bu sitelerin duyuru sayfaları eşzamanlı çekilir.
-3) `duyurular.json`'daki (site başına ayrı) daha önce görülmüş duyurularla karşılaştırılır.
-4) Her site için gerçekten yeni olan duyurular Telegram Bot API ile gönderilir.
-5) `duyurular.json` güncel duyurularla güncellenir.
+3) Her sitenin listesi `duyurular.json`'daki kaydıyla karşılaştırılıp gerçekten
+   yeni olan duyurular bulunur (kurallar için bkz. `process_site`).
+4) Yeni duyurular Telegram Bot API ile gönderilir.
+5) `duyurular.json` güncellenir. Artık izlenmeyen sitelerin kaydı silinir;
+   böylece bir site sonradan yeniden seçilirse aradaki duyurular toplu gelmez.
 
 Yeni bir Marmara sitesi eklemek için `sites.json`'a bir kayıt eklemek yeterli
 (host + notices_url) — main.py'de kod değişikliği gerekmez. Hangi sitelerin
@@ -57,6 +59,19 @@ MAX_RANDOM_DELAY_SECONDS = 180
 # üniversite sunucularına makul bir yükten fazlası binmesin.
 MAX_WORKERS = 8
 REQUEST_TIMEOUT = (10, 20)  # (connect, read) saniye
+
+# Marmara teması /allnotices'te tarihe göre sıralı en fazla bu kadar duyuru
+# gösteriyor; daha eskiler gizli kalıyor.
+PAGE_SIZE = 15
+
+# Listeden düşen duyurular bu kadar gün daha hatırlanır, listeye geri dönerse
+# tekrar bildirilmesin diye. Daha uzun süre sonra alttan geri dönen eski bir
+# duyuruyu tarih kuralı yakalar (bkz. process_site).
+FORGET_AFTER_DAYS = 180
+
+# Bir site art arda bu kadar kontrolde okunamaz ya da şüpheli bir liste
+# döndürürse kullanıcı Telegram'dan uyarılır.
+PROBLEM_THRESHOLD = 3
 
 # Telegram gönderimleri arasında API'ye art arda çok hızlı istek atmamak için
 # kibarca bekleme.
@@ -247,30 +262,169 @@ def fetch_all_sites(sites):
 
 
 def load_known():
-    """duyurular.json'daki site başına daha önce görülmüş duyuruları yükler. {host: [...]} döner."""
+    """duyurular.json'daki site kayıtlarını yükler.
+
+    Dönüş: {host: {"sayfa": [...], "gecmis": {...}, ...}}. "sayfa" sitenin son
+    sorunsuz okunan listesi, "gecmis" o listeden düşmüş duyuruların kimliği ve
+    en son görüldükleri gün. Eski biçimdeki kayıtlar ({host: [duyuru, ...]})
+    otomatik dönüştürülür.
+    """
     if not os.path.exists(DATA_FILE):
         return {}
 
     try:
         with open(DATA_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
     except (json.JSONDecodeError, OSError) as exc:
         logger.error("duyurular.json okunamadı, boş veriyle devam ediliyor: %s", exc)
         return {}
 
+    known = {}
+    for host, record in data.items():
+        if isinstance(record, list):  # eski biçim: sadece son liste
+            record = {"sayfa": record, "gecmis": {}}
+        if isinstance(record, dict) and isinstance(record.get("sayfa"), list):
+            record.setdefault("gecmis", {})
+            known[host] = record
+        else:
+            logger.warning("[%s] duyurular.json'daki kaydı tanınmadı, site yeni sayılacak.", host)
+    return known
+
 
 def save_known(data):
+    """Kayıtları önce geçici dosyaya yazıp sonra yerine koyar; yazma yarıda
+    kesilirse duyurular.json bozulmaz. Sıralama sabit olduğu için git
+    diff'lerinde sadece gerçekten değişen satırlar görünür."""
+    ordered = {}
+    for host in sorted(data):
+        record = data[host]
+        ordered[host] = {
+            "sayfa": record["sayfa"],
+            # Güne göre sıralı: yeni düşenler sona eklenir.
+            "gecmis": dict(sorted(record["gecmis"].items(), key=lambda kv: (kv[1], kv[0]))),
+            **{k: v for k, v in record.items() if k not in ("sayfa", "gecmis")},
+        }
+
+    tmp_file = DATA_FILE + ".tmp"
     try:
-        with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
+        with open(tmp_file, "w", encoding="utf-8") as f:
+            json.dump(ordered, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+        os.replace(tmp_file, DATA_FILE)
         logger.info("duyurular.json güncellendi (%d site).", len(data))
     except OSError as exc:
         logger.error("duyurular.json yazılamadı: %s", exc)
 
 
+def parse_notice_date(text):
+    """Listede yazan "gg.aa.yyyy" tarihini döner; okunamazsa None."""
+    try:
+        return datetime.strptime(text.strip(), "%d.%m.%Y").date()
+    except ValueError:
+        return None
+
+
+def notice_key(notice):
+    """Bir duyurunun kimliği; aynı kimlikli duyuru ikinci kez bildirilmez.
+
+    Sitenin kendi duyuru linkleri (/notice/...) her duyuru için tekildir (aynı
+    başlık yeniden girilince bile sonuna -1, -2 eklenir). Bazı duyurular ise
+    başka bir siteye ya da dosyaya link veriyor ve aynı link farklı
+    duyurularda tekrar kullanılabiliyor; bunlar başlıkla birlikte ayırt edilir.
+    """
+    if "/notice/" in notice["link"]:
+        return notice["link"]
+    return f"{notice['link']} | {notice['baslik']}"
+
+
+def process_site(state, page, today):
+    """Bir sitenin bu kontroldeki listesini işler.
+
+    Marmara temasında liste tarihe göre sıralı ve en fazla PAGE_SIZE duyuru
+    gösteriyor. Süresi dolan duyurular listeden kalkınca gizli kalmış daha eski
+    duyurular alttan geri giriyor; personel bazen yeni duyuruya eski bir tarih
+    yazıyor, başlık düzeltilince de link değişiyor. Bu yüzden sadece son 1-2
+    duyuruyu hatırlamak listenin ortasına giren duyuruları kaçırır. Kurallar:
+
+    1) Daha önce görülmüş duyuru bir daha bildirilmez. Listedekilerin yanında
+       listeden düşenler de FORGET_AFTER_DAYS gün hatırlanır ("gecmis").
+    2) Önceki liste doluyken onun en eski tarihinden de eski tarihli bir
+       duyuru yeni değil, alttan geri gelmiş eski bir duyurudur: dolu listeye
+       o kadar eski bir duyuru ancak üstündekilerden biri kalkınca girebilir.
+    3) Liste boşsa ya da bilinen hiçbir duyuruyu içermiyorsa (ve hepsi önceki
+       listenin en yeni tarihinden yeni değilse) site geçici bir sorun
+       yaşıyor sayılır: hiçbir şey bildirilmez, kayıt korunur. Sorun
+       PROBLEM_THRESHOLD kontrol sürerse kullanıcı uyarılır. Liste o zaman da
+       öncekiyle örtüşmüyorsa (ör. linklerin yapısı değişmiş) yeni liste
+       referans alınır ve sadece önceki listenin en yeni tarihinden eski
+       olmayan duyurular bildirilir.
+
+    state: duyurular.json'daki site kaydı, site ilk kez görülüyorsa None.
+    page: sitede şu an listelenen duyurular, site okunamadıysa None.
+    Dönüş: (yeni kayıt, bildirilecek duyurular, uyarı metni ya da None)
+    """
+    if state is None:
+        # Yeni kurulum ya da yeni seçilen site: mevcut duyuruları "yeni" sayıp
+        # toplu bildirim göndermek yerine sadece referans olarak kaydet.
+        return ({"sayfa": page, "gecmis": {}} if page is not None else None), [], None
+
+    prev = state["sayfa"]
+    seen = {notice_key(n) for n in prev} | set(state["gecmis"])
+    prev_dates = [d for d in (parse_notice_date(n["tarih"]) for n in prev) if d]
+    newest = max(prev_dates, default=None)
+
+    problem = None
+    if page is None:
+        problem = "okunamadı"
+    elif not page and prev:
+        problem = "boş liste döndürdü"
+    elif prev and seen.isdisjoint(notice_key(n) for n in page):
+        # İki kontrol arasında bir listeden fazla yeni duyuru girdiyse hepsi
+        # öncekilerden yeni tarihli olur; değilse sayfa bozuk ya da değişmiş.
+        page_dates = [parse_notice_date(n["tarih"]) for n in page]
+        if newest is None or not all(d and d >= newest for d in page_dates):
+            problem = "bilinen hiçbir duyuruyu içermeyen bir liste döndürdü"
+
+    warning = None
+    if problem:
+        streak = state.get("hata", 0) + 1
+        if not page or streak < PROBLEM_THRESHOLD:
+            if streak == PROBLEM_THRESHOLD:
+                warning = f"art arda {streak} kontrolde {problem}"
+            return {**state, "hata": streak}, [], warning
+        warning = f"art arda {streak} kontrolde {problem}; yeni liste referans alındı"
+
+    floor = min(prev_dates) if len(prev) == PAGE_SIZE and prev_dates else None
+
+    def is_old(d):
+        if problem:  # yeni referans: önceki listenin en yeni tarihinden eskiler
+            return newest is None or d is None or d < newest
+        return floor is not None and d is not None and d < floor
+
+    new_notices, keys = [], set()
+    for notice in page:
+        key = notice_key(notice)
+        if key in seen or key in keys:
+            continue
+        keys.add(key)
+        if not is_old(parse_notice_date(notice["tarih"])):
+            new_notices.append(notice)
+
+    page_keys = {notice_key(n) for n in page}
+    gecmis = {k: d for k, d in state["gecmis"].items() if k not in page_keys}
+    gecmis.update({notice_key(n): today.isoformat() for n in prev if notice_key(n) not in page_keys})
+    forget_before = (today - timedelta(days=FORGET_AFTER_DAYS)).isoformat()
+    new_state = {"sayfa": page, "gecmis": {k: d for k, d in gecmis.items() if d >= forget_before}}
+    return new_state, new_notices, warning
+
+
+def turkey_now():
+    return datetime.now(timezone.utc) + TURKEY_UTC_OFFSET
+
+
 def turkish_today_str():
     """Türkiye saatiyle 'bugün'ü "15 Eylül" formatında döner."""
-    tr_now = datetime.now(timezone.utc) + TURKEY_UTC_OFFSET
+    tr_now = turkey_now()
     return f"{tr_now.day} {TURKISH_MONTHS[tr_now.month - 1]}"
 
 
@@ -330,6 +484,14 @@ def send_telegram_heartbeat():
     return send_telegram_text(text)
 
 
+def send_telegram_warnings(warnings):
+    """Art arda sorun çıkaran siteleri kullanıcıya bildirir. warnings: [(site, metin)]"""
+    text = "\n\n".join(
+        f"⚠️ {site['name']}: {warning}\n{site['notices_url']}" for site, warning in warnings
+    )
+    return send_telegram_text(text)
+
+
 def main():
     logger.info("Marmara Üniversitesi duyuru botu başlatıldı.")
     random_delay()
@@ -339,39 +501,42 @@ def main():
         logger.error("sites.json'da aktif site bulunamadı, işlem sonlandırılıyor.")
         sys.exit(1)
 
-    site_by_host = {s["host"]: s for s in sites}
     current_by_host = fetch_all_sites(sites)
 
     if not current_by_host:
         logger.warning("Hiçbir siteden duyuru çekilemedi, işlem sonlandırılıyor.")
         sys.exit(0)
 
+    today = turkey_now().date()
     known_by_host = load_known()
-    updated_known = dict(known_by_host)
+    updated_known = {}
     new_items = []  # [(site, notice)]
+    warnings = []  # [(site, metin)]
 
-    for host, notices in current_by_host.items():
-        site = site_by_host[host]
-
-        # Bu host duyurular.json'da hiç yoksa (yeni deploy edilmiş bot ya da
-        # sites.json'a yeni eklenmiş bir site), mevcut duyuruları "yeni" sayıp
-        # toplu bildirim göndermek yerine sadece referans olarak kaydediyoruz.
-        if host not in known_by_host:
+    for site in sites:
+        host = site["host"]
+        notices = current_by_host.get(host)
+        if host not in known_by_host and notices is not None:
             logger.info(
                 "[%s] ilk kez görülüyor, bildirim gönderilmeden referans "
                 "olarak kaydedilecek (%d duyuru).",
                 host, len(notices),
             )
-            updated_known[host] = notices
-            continue
 
-        known_links = {n["link"] for n in known_by_host[host]}
-        site_new = [n for n in notices if n["link"] not in known_links]
+        state, site_new, warning = process_site(known_by_host.get(host), notices, today)
+        if state is None:
+            continue
+        updated_known[host] = state
         if site_new:
             logger.info("[%s] %d yeni duyuru bulundu.", host, len(site_new))
             new_items.extend((site, n) for n in site_new)
+        if warning:
+            logger.warning("[%s] %s", host, warning)
+            warnings.append((site, warning))
 
-        updated_known[host] = notices
+    dropped = len(set(known_by_host) - set(updated_known))
+    if dropped:
+        logger.info("Artık izlenmeyen %d sitenin kaydı siliniyor.", dropped)
 
     if not new_items:
         logger.info("Toplamda yeni duyuru yok.")
@@ -389,6 +554,9 @@ def main():
 
         if sent < len(new_items):
             logger.warning("%d/%d yeni duyuru Telegram ile gönderilebildi.", sent, len(new_items))
+
+    if warnings:
+        send_telegram_warnings(warnings)
 
     save_known(updated_known)
 
