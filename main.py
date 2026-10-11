@@ -77,11 +77,20 @@ PROBLEM_THRESHOLD = 3
 # kibarca bekleme.
 TELEGRAM_SEND_DELAY_SECONDS = 0.5
 
+# Geçici bir hatada (bağlantı, 429 "çok hızlı", 5xx) bir mesaj bu kadar kez
+# denenir. Yine gönderilemeyen duyuru kaybolmaz: duyurular.json'a "bekleyen"
+# olarak yazılır ve bir sonraki çalıştırmada tekrar denenir.
+TELEGRAM_MAX_ATTEMPTS = 3
+
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # Yerel testte (`SKIP_RANDOM_DELAY=1 python main.py`) rastgele beklemeyi atlamak için.
 SKIP_RANDOM_DELAY = os.environ.get("SKIP_RANDOM_DELAY") == "1"
+
+# Yerel testte (`DRY_RUN=1 python main.py`) Telegram'a mesaj göndermeden ve
+# duyurular.json'a yazmadan nelerin gönderileceğini görmek için.
+DRY_RUN = os.environ.get("DRY_RUN") == "1"
 
 # Türkiye saat dilimi (UTC+3, DST yok) — GitHub Actions runner'ı UTC çalıştığı
 # için "bugün"ün tarihini kullanıcının göreceği gibi göstermek için kullanılır.
@@ -108,8 +117,8 @@ logger = logging.getLogger("marmara-duyuru-bot")
 
 def random_delay():
     """09:00-09:03 arası rastgele bir saatte kontrol edebilmek için bekler."""
-    if SKIP_RANDOM_DELAY:
-        logger.info("SKIP_RANDOM_DELAY=1: rastgele bekleme atlanıyor.")
+    if SKIP_RANDOM_DELAY or DRY_RUN:
+        logger.info("Yerel test: rastgele bekleme atlanıyor.")
         return
     delay = random.randint(0, MAX_RANDOM_DELAY_SECONDS)
     logger.info("Rastgele bekleme: %s saniye.", delay)
@@ -294,7 +303,11 @@ def load_known():
 def save_known(data):
     """Kayıtları önce geçici dosyaya yazıp sonra yerine koyar; yazma yarıda
     kesilirse duyurular.json bozulmaz. Sıralama sabit olduğu için git
-    diff'lerinde sadece gerçekten değişen satırlar görünür."""
+    diff'lerinde sadece gerçekten değişen satırlar görünür. Başarılıysa True döner."""
+    if DRY_RUN:
+        logger.info("DRY_RUN=1: duyurular.json'a yazılmadı.")
+        return True
+
     ordered = {}
     for host in sorted(data):
         record = data[host]
@@ -312,8 +325,10 @@ def save_known(data):
             f.write("\n")
         os.replace(tmp_file, DATA_FILE)
         logger.info("duyurular.json güncellendi (%d site).", len(data))
+        return True
     except OSError as exc:
         logger.error("duyurular.json yazılamadı: %s", exc)
+        return False
 
 
 def parse_notice_date(text):
@@ -415,6 +430,8 @@ def process_site(state, page, today):
     gecmis.update({notice_key(n): today.isoformat() for n in prev if notice_key(n) not in page_keys})
     forget_before = (today - timedelta(days=FORGET_AFTER_DAYS)).isoformat()
     new_state = {"sayfa": page, "gecmis": {k: d for k, d in gecmis.items() if d >= forget_before}}
+    if state.get("bekleyen"):
+        new_state["bekleyen"] = state["bekleyen"]
     return new_state, new_notices, warning
 
 
@@ -434,7 +451,13 @@ def send_telegram_text(text):
     WhatsApp Cloud API'nin aksine Telegram'da onaylı şablon veya 24 saatlik
     "müşteri penceresi" kısıtlaması yok — kullanıcı bota bir kere /start
     dediğinde bot o chat_id'ye süresiz, serbest metin mesaj gönderebilir.
+
+    Geçici hatalarda TELEGRAM_MAX_ATTEMPTS kez dener. Gönderildiyse True döner.
     """
+    if DRY_RUN:
+        logger.info("DRY_RUN=1, Telegram'a gönderilmeyen mesaj:\n%s", text)
+        return True
+
     if not (TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID):
         logger.error(
             "Telegram ortam değişkenleri eksik (TELEGRAM_BOT_TOKEN / "
@@ -443,23 +466,33 @@ def send_telegram_text(text):
         return False
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": text,
-        "disable_web_page_preview": False,
-    }
+    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": text}
 
-    try:
-        response = requests.post(url, json=payload, timeout=30)
-        response.raise_for_status()
-        logger.info("Telegram mesajı gönderildi.")
-        return True
-    except requests.RequestException as exc:
-        detail = ""
-        if getattr(exc, "response", None) is not None:
-            detail = f" | Yanıt: {exc.response.text}"
-        logger.error("Telegram mesajı gönderilemedi: %s%s", exc, detail)
-        return False
+    for attempt in range(1, TELEGRAM_MAX_ATTEMPTS + 1):
+        wait = 2 ** attempt
+        try:
+            response = requests.post(url, json=payload, timeout=30)
+        except requests.RequestException as exc:
+            # Bağlantı hatalarının metninde istek adresi, yani token geçebiliyor.
+            error = str(exc).replace(TELEGRAM_BOT_TOKEN, "***")
+        else:
+            if response.ok:
+                logger.info("Telegram mesajı gönderildi.")
+                return True
+            error = f"HTTP {response.status_code} | Yanıt: {response.text}"
+            if response.status_code == 429:  # Telegram ne kadar bekleneceğini söylüyor
+                try:
+                    wait = int(response.json()["parameters"]["retry_after"])
+                except (ValueError, KeyError, TypeError):
+                    pass
+            elif response.status_code < 500:
+                break  # Token, chat_id ya da mesaj hatalı; tekrar denemek işe yaramaz.
+        if attempt < TELEGRAM_MAX_ATTEMPTS:
+            logger.warning("Telegram mesajı gönderilemedi (%s), %d sn sonra tekrar denenecek.", error, wait)
+            time.sleep(min(wait, 60))
+
+    logger.error("Telegram mesajı gönderilemedi: %s", error)
+    return False
 
 
 def send_telegram_notification(site_name, title, link):
@@ -472,23 +505,29 @@ def send_telegram_notification(site_name, title, link):
     return send_telegram_text(text)
 
 
-def send_telegram_heartbeat():
+def warnings_text(warnings):
+    """Art arda sorun çıkaran sitelerin uyarı metni. warnings: [(site, metin)]"""
+    return "\n\n".join(
+        f"⚠️ {site['name']}: {warning}\n{site['notices_url']}" for site, warning in warnings
+    )
+
+
+def send_telegram_heartbeat(checked, total, warnings):
     """Bugün yeni duyuru olmadığını, ama botun çalıştığını bildirir.
 
     Kullanıcı bunu her gün görüp botun gerçekten çalıştığından emin olabilsin
     diye — aksi halde tek bildirim kanalı yeni duyuru olduğunda gelen mesajlar
     olurdu ve günler boyu sessizlik "bot çalışıyor mu, bozuldu mu?" sorusunu
-    doğururdu.
+    doğururdu. Aynı sebeple kontrol edilemeyen site varsa bu da yazılır.
     """
-    text = f"✅ {turkish_today_str()} - Duyuru yok"
-    return send_telegram_text(text)
-
-
-def send_telegram_warnings(warnings):
-    """Art arda sorun çıkaran siteleri kullanıcıya bildirir. warnings: [(site, metin)]"""
-    text = "\n\n".join(
-        f"⚠️ {site['name']}: {warning}\n{site['notices_url']}" for site, warning in warnings
-    )
+    if checked == 0:
+        text = f"⚠️ {turkish_today_str()} - Hiçbir site kontrol edilemedi, sonraki çalıştırmada tekrar denenecek"
+    elif checked < total:
+        text = f"✅ {turkish_today_str()} - Duyuru yok ({checked}/{total} site kontrol edilebildi)"
+    else:
+        text = f"✅ {turkish_today_str()} - Duyuru yok"
+    if warnings:
+        text += "\n\n" + warnings_text(warnings)
     return send_telegram_text(text)
 
 
@@ -504,32 +543,41 @@ def main():
     current_by_host = fetch_all_sites(sites)
 
     if not current_by_host:
-        logger.warning("Hiçbir siteden duyuru çekilemedi, işlem sonlandırılıyor.")
-        sys.exit(0)
+        # Hiçbir siteye ulaşılamadıysa sorun büyük ihtimalle sitelerde değil
+        # bağlantıda; sitelerin kayıtlarına dokunulmaz.
+        logger.warning("Hiçbir siteden duyuru çekilemedi.")
 
     today = turkey_now().date()
     known_by_host = load_known()
     updated_known = {}
-    new_items = []  # [(site, notice)]
+    outbox = []  # [(site, notice)]: önce önceki çalıştırmadan bekleyenler, sonra yeniler
     warnings = []  # [(site, metin)]
+    checked = 0
 
     for site in sites:
         host = site["host"]
-        notices = current_by_host.get(host)
-        if host not in known_by_host and notices is not None:
-            logger.info(
-                "[%s] ilk kez görülüyor, bildirim gönderilmeden referans "
-                "olarak kaydedilecek (%d duyuru).",
-                host, len(notices),
-            )
-
-        state, site_new, warning = process_site(known_by_host.get(host), notices, today)
+        state, site_new, warning = known_by_host.get(host), [], None
+        if current_by_host:
+            notices = current_by_host.get(host)
+            if state is None and notices is not None:
+                logger.info(
+                    "[%s] ilk kez görülüyor, bildirim gönderilmeden referans "
+                    "olarak kaydedilecek (%d duyuru).",
+                    host, len(notices),
+                )
+            state, site_new, warning = process_site(state, notices, today)
         if state is None:
             continue
+
+        pending = state.pop("bekleyen", [])
         updated_known[host] = state
+        if current_by_host and not state.get("hata"):
+            checked += 1
+        if pending:
+            logger.info("[%s] önceki çalıştırmada gönderilemeyen %d duyuru tekrar denenecek.", host, len(pending))
         if site_new:
             logger.info("[%s] %d yeni duyuru bulundu.", host, len(site_new))
-            new_items.extend((site, n) for n in site_new)
+        outbox.extend((site, n) for n in pending + site_new)
         if warning:
             logger.warning("[%s] %s", host, warning)
             warnings.append((site, warning))
@@ -538,27 +586,33 @@ def main():
     if dropped:
         logger.info("Artık izlenmeyen %d sitenin kaydı siliniyor.", dropped)
 
-    if not new_items:
+    failed = 0
+    if not outbox:
         logger.info("Toplamda yeni duyuru yok.")
-        send_telegram_heartbeat()
+        if not send_telegram_heartbeat(checked, len(sites), warnings):
+            failed += 1
     else:
-        logger.info("Toplam %d yeni duyuru Telegram ile gönderilecek.", len(new_items))
-        sent = 0
-        for site, notice in new_items:
+        logger.info("Toplam %d duyuru Telegram ile gönderilecek.", len(outbox))
+        for site, notice in outbox:
             try:
-                if send_telegram_notification(site["name"], notice["baslik"], notice["link"]):
-                    sent += 1
+                sent = send_telegram_notification(site["name"], notice["baslik"], notice["link"])
             except Exception as exc:  # Beklenmeyen bir hata tüm çalıştırmayı düşürmesin.
                 logger.error("[%s] duyuru gönderilirken beklenmeyen hata: %s", site["host"], exc)
+                sent = False
+            if not sent:
+                failed += 1
+                updated_known[site["host"]].setdefault("bekleyen", []).append(notice)
             time.sleep(TELEGRAM_SEND_DELAY_SECONDS)
+        if warnings and not send_telegram_text(warnings_text(warnings)):
+            failed += 1
 
-        if sent < len(new_items):
-            logger.warning("%d/%d yeni duyuru Telegram ile gönderilebildi.", sent, len(new_items))
-
-    if warnings:
-        send_telegram_warnings(warnings)
-
-    save_known(updated_known)
+    if not save_known(updated_known):
+        sys.exit(1)
+    if failed:
+        # Workflow kırmızıya dönsün ki GitHub kullanıcıya e-posta atsın;
+        # gönderilemeyen duyurular bir sonraki çalıştırmada tekrar denenecek.
+        logger.error("%d Telegram mesajı gönderilemedi.", failed)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -318,13 +318,22 @@ class MainTests(unittest.TestCase):
             patcher.start()
             self.addCleanup(patcher.stop)
 
+    telegram_down = False
+
     def fake_send(self, text):
+        if self.telegram_down:
+            return False
         self.sent.append(text)
         return True
 
-    def run_main(self, pages):
+    def run_main(self, pages, exit_code=None):
         with mock.patch.object(main, "fetch_all_sites", lambda sites: pages):
-            main.main()
+            if exit_code is None:
+                main.main()
+            else:
+                with self.assertRaises(SystemExit) as raised:
+                    main.main()
+                self.assertEqual(raised.exception.code, exit_code)
         with open(self.path, encoding="utf-8") as f:
             return json.load(f)
 
@@ -345,6 +354,97 @@ class MainTests(unittest.TestCase):
         self.assertEqual(len(self.sent), 1)
         self.assertIn("Site A", self.sent[0])
         self.assertIn(new["link"], self.sent[0])
+
+    def test_gonderilemeyen_duyuru_kaybolmaz_sonraki_calistirmada_gider(self):
+        old = notice("a", START)
+        self.run_main({"a.marmara.edu.tr": [old], "b.marmara.edu.tr": []})
+        new = notice("yeni", START + timedelta(days=1))
+        pages = {"a.marmara.edu.tr": [new, old], "b.marmara.edu.tr": []}
+
+        self.telegram_down = True
+        saved = self.run_main(pages, exit_code=1)
+        self.assertEqual(saved["a.marmara.edu.tr"]["bekleyen"], [new])
+
+        self.telegram_down = False
+        self.sent.clear()
+        saved = self.run_main(pages)
+        self.assertEqual(len(self.sent), 1)
+        self.assertIn(new["link"], self.sent[0])
+        self.assertNotIn("bekleyen", saved["a.marmara.edu.tr"])
+
+    def test_kontrol_edilemeyen_site_kalp_atisinda_yazar(self):
+        page = [notice("a", START)]
+        self.run_main({"a.marmara.edu.tr": page, "b.marmara.edu.tr": []})
+        self.sent.clear()
+        self.run_main({"a.marmara.edu.tr": page})
+        self.assertEqual(len(self.sent), 1)
+        self.assertIn("Duyuru yok (1/2 site kontrol edilebildi)", self.sent[0])
+
+    def test_uc_kez_okunamayan_site_icin_uyari_gelir(self):
+        page = [notice("a", START)]
+        self.run_main({"a.marmara.edu.tr": page, "b.marmara.edu.tr": [notice("b", START)]})
+        for _ in range(main.PROBLEM_THRESHOLD):
+            self.sent.clear()
+            self.run_main({"a.marmara.edu.tr": page})
+        self.assertEqual(len(self.sent), 1)
+        self.assertIn("⚠️ Site B: art arda 3 kontrolde okunamadı", self.sent[0])
+
+    def test_hicbir_siteye_ulasilamazsa_kayitlar_degismez(self):
+        before = self.run_main({"a.marmara.edu.tr": [notice("a", START)], "b.marmara.edu.tr": []})
+        self.sent.clear()
+        after = self.run_main({})
+        self.assertEqual(after, before)
+        self.assertEqual(len(self.sent), 1)
+        self.assertIn("Hiçbir site kontrol edilemedi", self.sent[0])
+
+
+class FakeResponse:
+    def __init__(self, status_code, body):
+        self.status_code, self.body = status_code, body
+        self.ok = status_code == 200
+        self.text = json.dumps(body)
+
+    def json(self):
+        return self.body
+
+
+class TelegramSendTests(unittest.TestCase):
+    def setUp(self):
+        self.calls, self.sleeps, self.responses = [], [], []
+        for patcher in (
+            mock.patch.object(main, "TELEGRAM_BOT_TOKEN", "123:GIZLI"),
+            mock.patch.object(main, "TELEGRAM_CHAT_ID", "42"),
+            mock.patch.object(main.requests, "post", self.fake_post),
+            mock.patch.object(main.time, "sleep", self.sleeps.append),
+        ):
+            patcher.start()
+            self.addCleanup(patcher.stop)
+
+    def fake_post(self, url, json, timeout):
+        self.calls.append(json)
+        response = self.responses.pop(0)
+        if isinstance(response, Exception):
+            raise response
+        return response
+
+    def test_cok_hizli_uyarisinda_bekleyip_tekrar_dener(self):
+        self.responses = [FakeResponse(429, {"parameters": {"retry_after": 7}}), FakeResponse(200, {"ok": True})]
+        self.assertTrue(main.send_telegram_text("merhaba"))
+        self.assertEqual(len(self.calls), 2)
+        self.assertEqual(self.sleeps, [7])
+
+    def test_hatali_istekte_tekrar_denemez(self):
+        self.responses = [FakeResponse(400, {"description": "Bad Request: chat not found"})]
+        self.assertFalse(main.send_telegram_text("merhaba"))
+        self.assertEqual(len(self.calls), 1)
+
+    def test_baglanti_hatasinda_token_loga_yazilmaz(self):
+        error = main.requests.ConnectionError("Max retries exceeded with url: /bot123:GIZLI/sendMessage")
+        self.responses = [error] * main.TELEGRAM_MAX_ATTEMPTS
+        with mock.patch.object(main.logger, "disabled", False), self.assertLogs(main.logger) as logs:
+            self.assertFalse(main.send_telegram_text("merhaba"))
+        self.assertEqual(len(self.calls), main.TELEGRAM_MAX_ATTEMPTS)
+        self.assertNotIn("GIZLI", "\n".join(logs.output))
 
 
 if __name__ == "__main__":

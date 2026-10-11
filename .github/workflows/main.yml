@@ -37,6 +37,9 @@ jobs:
         run: python main.py
 
       - name: duyurular.json değişikliğini repoya commit'le
+        # main.py Telegram'a mesaj gönderemeyince hata koduyla biter (GitHub
+        # e-posta atsın diye); gönderilemeyen duyurular yine de kaydedilmeli.
+        if: success() || failure()
         run: |
           git config user.name "marmara-duyuru-bot"
           git config user.email "actions@github.com"
