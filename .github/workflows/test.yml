@@ -1,0 +1,29 @@
+name: Testler
+
+# Sadece kod değişince çalışır; günlük bot çalıştırmasını etkilemez.
+on:
+  push:
+    paths:
+      - "main.py"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/test.yml"
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repoyu çek
+        uses: actions/checkout@v4
+
+      - name: Python'u kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Bağımlılıkları kur
+        run: pip install -r requirements.txt
+
+      - name: Testleri çalıştır
+        run: python -m unittest discover tests -v

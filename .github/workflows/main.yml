@@ -2,9 +2,11 @@ name: Marmara Duyuru Takip Botu
 
 on:
   schedule:
-    # Türkiye UTC+3 kullanıyor ve DST uygulamıyor, bu yüzden 09:00 TR = 06:00 UTC
-    # her zaman geçerli (mevsimsel kaymaya gerek yok).
-    - cron: "0 6 * * *"
+    # Türkiye UTC+3 kullanıyor ve DST uygulamıyor, bu yüzden 09:17 TR = 06:17 UTC
+    # her zaman geçerli (mevsimsel kaymaya gerek yok). Saat başları GitHub'ın en
+    # yoğun anı: "0 6" ile çalıştırmalar 4-7 saat gecikip 13:14-16:30 TR arasında
+    # başlıyordu. GitHub'ın önerisi saat başı dışında bir dakika seçmek.
+    - cron: "17 6 * * *"
   workflow_dispatch: {} # Gerektiğinde elle tetiklemek için
 
 # GITHUB_TOKEN'ın duyurular.json değişikliğini repoya push edebilmesi için.

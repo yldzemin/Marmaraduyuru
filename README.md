@@ -8,12 +8,19 @@ takip ederek yapılır, kod bilgisi gerekmez.
 
 ## Nasıl çalışır?
 
-Her gün Türkiye saatiyle 09:00 civarında bot otomatik uyanır, izlemesini
-istediğiniz siteleri kontrol eder, daha önce görmediği duyuru varsa size
-Telegram'dan mesaj atar. İlk kurulumda ya da yeni bir site eklediğinizde,
-o sitenin o anki duyuruları "yeni" sayılıp toplu bildirim göndermez —
-sessizce referans olarak kaydedilir; sadece bundan sonra çıkan gerçek yeni
-duyurular bildirilir.
+Bot her gün otomatik uyanır (Türkiye saatiyle 09:17 için zamanlanır; GitHub
+yoğun zamanlarda bunu geciktirebilir), izlemesini istediğiniz siteleri kontrol
+eder, daha önce görmediği duyuru varsa size Telegram'dan mesaj atar. Yeni
+duyuru yoksa "✅ Duyuru yok" mesajı gelir, böylece botun çalıştığını bilirsiniz.
+İlk kurulumda ya da yeni bir site eklediğinizde, o sitenin o anki duyuruları
+"yeni" sayılıp toplu bildirim göndermez — sessizce referans olarak
+kaydedilir; sadece bundan sonra çıkan gerçek yeni duyurular bildirilir.
+
+Sitelerdeki listeler en fazla 15 duyuru gösterir. Süresi dolan bir duyuru
+listeden kalkınca, aylar önceki bir duyuru alttan geri girebilir. Bot bunu
+tarihinden anlar ve tekrar bildirmez. Listenin ortasına eski tarihle girilen
+ya da başlığı düzeltilen duyuruları ise kaçırmaz. Bir site art arda 3 kontrolde
+okunamazsa ya da boş/tanınmayan bir liste döndürürse Telegram'dan ⚠️ uyarısı gelir.
 
 ---
 
@@ -83,8 +90,9 @@ düzenleyebilirsiniz (bilgisayarınıza indirmenize gerek yok):
 4. Sağ üstte çıkan **"Run workflow"** açılır menüsüne tıklayın, sonra tekrar yeşil **"Run workflow"** butonuna basın.
 5. Birkaç dakika sonra sayfayı yenileyin — çalışma yeşil tik ✅ ile bitmeli. Üstüne tıklayıp **"Run python main.py"** adımının loglarını görebilirsiniz.
 
-Bundan sonra bot her gün otomatik olarak Türkiye saatiyle 09:00-09:03 arasında
-çalışacak ve yeni bir duyuru çıktığında size Telegram'dan mesaj gönderecektir.
+Bundan sonra bot her gün otomatik olarak çalışacak (Türkiye saatiyle 09:17 için
+zamanlanır; GitHub yoğun zamanlarda başlatmayı geciktirebilir) ve yeni bir
+duyuru çıktığında size Telegram'dan mesaj gönderecektir.
 Elle test etmek isterseniz her zaman Adım 5.3-5.4'ü tekrarlayabilirsiniz.
 
 ---
@@ -96,15 +104,19 @@ Elle test etmek isterseniz her zaman Adım 5.3-5.4'ü tekrarlayabilirsiniz.
 | `main.py` | Seçilen siteleri kazır, önceki duyurularla karşılaştırır, Telegram'a gönderir |
 | `secilecek_siteler.txt` | **Asıl kontrol dosyası** — hangi sitelerin izleneceği (bkz. Adım 4) |
 | `sites.json` | Site kataloğu (isim, host, duyuru URL'si) — sadece yeni bir site eklerken dokunulur |
-| `duyurular.json` | Site başına daha önce görülmüş duyuruların kaydı (bot tarafından otomatik güncellenir) |
+| `duyurular.json` | Her sitenin son listesi, listeden düşen duyuruların 180 günlük kaydı ve gönderilemeyip bekleyen duyurular (bot otomatik günceller, elle düzenlemeyin) |
 | `.github/workflows/main.yml` | Günlük zamanlama ve çalıştırma tanımı |
+| `.github/workflows/test.yml` | Kod değiştiğinde testleri çalıştırır |
+| `tests/` | Duyuru tespit kurallarının testleri |
 | `requirements.txt` | Python bağımlılıkları |
 
 ## Sorun giderme
 
 - **Actions sekmesinde çalışma görünmüyor / hiç tetiklenmiyor:** Fork'larda Actions varsayılan kapalı gelir, Adım 5.2'yi kontrol edin.
-- **Çalışma kırmızı ✗ ile bitiyor:** Loglara tıklayıp `Run python main.py` adımına bakın; genelde `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` eksik veya yanlış girilmiş olur (Adım 3'ü kontrol edin).
-- **Mesaj hiç gelmiyor ama çalışma yeşil:** O çalıştırmada gerçekten yeni bir duyuru olmayabilir — loglarda "Toplamda yeni duyuru yok." yazıyorsa normaldir, sorun değil.
+- **Çalışma kırmızı ✗ ile bitiyor:** Bot, Telegram'a mesaj gönderemediğinde çalışmayı bilerek kırmızı bitirir ki GitHub size e-posta atsın. Loglara tıklayıp `Run python main.py` adımına bakın; genelde `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` eksik veya yanlış girilmiş olur (Adım 3'ü kontrol edin). Gönderilemeyen duyurular kaybolmaz, bir sonraki çalıştırmada tekrar denenir.
+- **"✅ Duyuru yok" mesajı da gelmiyor:** Her çalıştırma ya duyuru ya da bu mesajı gönderir. Hiçbiri gelmediyse Actions sekmesinde o günün çalışmasına bakın.
+- **⚠️ uyarısı geldi:** Uyarıdaki site art arda 3 kontrolde okunamamış ya da boş/tanınmayan bir liste döndürmüş demektir. Çoğu zaman site geçici olarak bozuktur ve kendiliğinden düzelir; bot o sırada eski kaydı korur, düzelince kaldığı yerden devam eder. Uyarı sürüyorsa linke tıklayıp siteyi kontrol edin.
+- **"Duyuru yok (16/18 site kontrol edilebildi)" gibi bir mesaj:** O gün bazı sitelere ulaşılamamış demektir, bir sonraki çalıştırmada tekrar denenir.
 - **Botu yeniden adlandırmak/token'ı yenilemek isterseniz:** Telegram'da BotFather'a `/mybots` yazıp botunuzu seçin.
 
 ## Başkalarına duyurmak ister misin?
@@ -117,10 +129,10 @@ atabilirsin:
 >
 > Bölümünün/enstitünün/birimin sitesindeki duyuruları kaçırmaktan bıktın mı? Bu bot senin için:
 >
-> Marmara Üniversitesi'nin istediğin sitelerini (fakülte, enstitü, daire başkanlığı vs.) her sabah otomatik kontrol edip yeni duyuru çıktığında Telegram'a mesaj atıyor. Tamamen ücretsiz, GitHub üzerinde çalışıyor, sunucu falan gerekmiyor.
+> Marmara Üniversitesi'nin istediğin sitelerini (fakülte, enstitü, daire başkanlığı vs.) her gün otomatik kontrol edip yeni duyuru çıktığında Telegram'a mesaj atıyor. Tamamen ücretsiz, GitHub üzerinde çalışıyor, sunucu falan gerekmiyor.
 >
 > Kurmak için kod bilgisi gerekmiyor — GitHub'da "Fork" butonuna basıp README'deki adımları takip etmen yeterli (~15 dk):
-> 👉 https://github.com/mEhMet6968/Marmaraduyuru
+> 👉 https://github.com/yldzemin/Marmaraduyuru
 >
 > Herkes kendi bot'unu, kendi Telegram hesabına, kendi izlediği sitelerle kurar.
 
@@ -138,6 +150,9 @@ Bu bot işine yaradıysa:
 ```bash
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
+DRY_RUN=1 python main.py   # Telegram'a göndermeden ve duyurular.json'a yazmadan, gidecek mesajları gösterir
+python -m unittest discover tests   # testleri çalıştırır
+
 export TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=...
-SKIP_RANDOM_DELAY=1 python main.py   # rastgele beklemeyi atlayarak hemen çalıştırır
+SKIP_RANDOM_DELAY=1 python main.py   # gerçek çalıştırma: rastgele beklemeyi atlayarak hemen çalışır
 ```
