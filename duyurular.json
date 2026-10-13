@@ -382,6 +382,11 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Borusan Teknoloji Okulu",
+        "tarih": "13.10.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/borusan-teknoloji-okulu-1"
+      },
+      {
         "baslik": "Kodluyoruz Etkinlik Duyurusu",
         "tarih": "12.10.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/kodluyoruz-etkinlik-duyurusu"
@@ -450,11 +455,6 @@
         "baslik": "Akare Yurt Dışı Eğitim Fuarları",
         "tarih": "29.09.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/akare-yurt-disi-egitim-fuarlari"
-      },
-      {
-        "baslik": "Garanti BBVA Genç Kampüs Elçileri Programı",
-        "tarih": "29.09.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/garanti-bbva-genc-kampus-elcileri-programi"
       }
     ],
     "gecmis": {
@@ -463,7 +463,8 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/ing-hubs-turkiye-agentic-ai-hackathon": "2026-10-12",
       "https://kariyermerkezi.marmara.edu.tr/notice/pegasus-fuar-lojistik-stajyer-ilani": "2026-10-12",
       "https://kariyermerkezi.marmara.edu.tr/notice/polipedia-uzun-donem-stajyer-ilani": "2026-10-12",
-      "https://kariyermerkezi.marmara.edu.tr/notice/umudum-egitim-burs-programi": "2026-10-12"
+      "https://kariyermerkezi.marmara.edu.tr/notice/umudum-egitim-burs-programi": "2026-10-12",
+      "https://kariyermerkezi.marmara.edu.tr/notice/garanti-bbva-genc-kampus-elcileri-programi": "2026-10-13"
     }
   },
   "mitto.marmara.edu.tr": {
@@ -659,6 +660,11 @@
   "sustainability.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Marmara Üniversitesi, 24 Projesiyle COP31’de!",
+        "tarih": "13.10.2026",
+        "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-24-projesiyle-cop31de"
+      },
+      {
         "baslik": "Marmara Üniversitesi Sürdürülebilirlik Ofisi Koordinatörü ve STKAM Müdürü Prof.Dr.Esra Yüksel Acı, COP31 Sürdürülebilir Dönüşüm Ödülleri Finalist Sunumları ve 2. Aşama Jüri Değerlendirme Toplantısı’nda yer aldı.",
         "tarih": "21.09.2026",
         "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-surdurulebilirlik-ofisi-koordinatoru-ve-stkam-muduru-profdresra-yuksel-aci-cop31-surdurulebilir-donusum-odulleri-finalist-sunumlari-ve-2-asama-juri-degerlendirme-toplantisinda-yer-aldi"
@@ -723,6 +729,11 @@
   },
   "teknoloji.marmara.edu.tr": {
     "sayfa": [
+      {
+        "baslik": "7592 Sayılı Kanun Kapsamında Fakültemize Yatay Geçiş Başvuru Sonuçları",
+        "tarih": "13.10.2026",
+        "link": "https://teknoloji.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-fakultemize-yatay-gecis-basvuru-sonuclari"
+      },
       {
         "baslik": "Teknoloji Fakültemizden 6 Öğretim Üyesi “Dünyanın En Etkili Bilim İnsanları” Listesinde",
         "tarih": "12.10.2026",
@@ -792,15 +803,11 @@
         "baslik": "MARMARA ÜNİVERSİTESİ İNSANSIZ HAVA ARAÇLARI KULÜBÜ (İHA MARMARA) BAŞARISI",
         "tarih": "22.05.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/marmara-universitesi-insansiz-hava-araclari-kulubu-iha-marmara-basarisi"
-      },
-      {
-        "baslik": "10. Uluslararası Yapay Zekâ ve Veri İşleme Sempozyumu Bu Yıl Marmara Üniversitesi’nde",
-        "tarih": "11.05.2026",
-        "link": "https://teknoloji.marmara.edu.tr/notice/10-uluslararasi-yapay-zeka-ve-veri-isleme-sempozyumu-bu-yil-marmara-universitesinde"
       }
     ],
     "gecmis": {
-      "https://teknoloji.marmara.edu.tr/notice/amc-2026-eklemeli-imalat-konferansi-fakultemizin-onemli-katkisi-ile-duzenlendi": "2026-10-12"
+      "https://teknoloji.marmara.edu.tr/notice/amc-2026-eklemeli-imalat-konferansi-fakultemizin-onemli-katkisi-ile-duzenlendi": "2026-10-12",
+      "https://teknoloji.marmara.edu.tr/notice/10-uluslararasi-yapay-zeka-ve-veri-isleme-sempozyumu-bu-yil-marmara-universitesinde": "2026-10-13"
     }
   },
   "ubf.marmara.edu.tr": {
