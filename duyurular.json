@@ -998,11 +998,6 @@
         "link": "https://oidb.marmara.edu.tr/notice/2026-yks-kapsaminda-spor-bilimleri-icin-ozel-yetenek-sinavi-ozyesyerlestirme-kayit-islemleri"
       },
       {
-        "baslik": "Akademik İlan",
-        "tarih": "29.09.2026",
-        "link": "https://www.marmara.edu.tr/notice/akademik-ilan-35"
-      },
-      {
         "baslik": "7592 Sayılı Kanun Kapsamında Üniversitemize Af Yatay Geçiş İşlemleri",
         "tarih": "24.09.2026",
         "link": "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-yatay-gecis-islemleri"
@@ -1045,7 +1040,8 @@
     ],
     "gecmis": {
       "https://oidb.marmara.edu.tr/notice/2026-yuksekogretim-kurumlari-sinavi-yks-ek-yerlestirme-sonucu-universitemize-kayit-islemleri": "2026-10-12",
-      "https://www.marmara.edu.tr/notice/marmara-universitesi-rektorlugunden-surekli-isci-alim-ilani-eski-hukumlutmy": "2026-10-12"
+      "https://www.marmara.edu.tr/notice/marmara-universitesi-rektorlugunden-surekli-isci-alim-ilani-eski-hukumlutmy": "2026-10-12",
+      "https://www.marmara.edu.tr/notice/akademik-ilan-35": "2026-10-14"
     }
   }
 }
