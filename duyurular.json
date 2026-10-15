@@ -82,6 +82,11 @@
   "bapko.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "BAPSİS Kullanımına Yönelik Bilgilendirme Eğitimi Gerçekleştirildi",
+        "tarih": "14.10.2026",
+        "link": "https://bapko.marmara.edu.tr/notice/bapsis-kullanimina-yonelik-bilgilendirme-egitimi-gerceklestirildi"
+      },
+      {
         "baslik": "2026 YILI BAP PROJELERİ BAŞVURU LİMİTLERİ",
         "tarih": "13.01.2026",
         "link": "https://bapko.marmara.edu.tr/notice/2026-yili-bap-projeleri-basvuru-limitleri"
@@ -382,6 +387,16 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "İş Hayatına Hazırlık Zirvesi",
+        "tarih": "14.10.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/is-hayatina-hazirlik-zirvesi"
+      },
+      {
+        "baslik": "Kariyer Planlama Platformu Broşürü",
+        "tarih": "14.10.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/kariyer-planlama-platformu-brosuru"
+      },
+      {
         "baslik": "Borusan Teknoloji Okulu",
         "tarih": "13.10.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/borusan-teknoloji-okulu-1"
@@ -445,16 +460,6 @@
         "baslik": "2026 yılı Meslek Personeli",
         "tarih": "02.10.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/2026-yili-meslek-personeli"
-      },
-      {
-        "baslik": "İyi Gelecek Staj Programı",
-        "tarih": "02.10.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/iyi-gelecek-staj-programi"
-      },
-      {
-        "baslik": "Akare Yurt Dışı Eğitim Fuarları",
-        "tarih": "29.09.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/akare-yurt-disi-egitim-fuarlari"
       }
     ],
     "gecmis": {
@@ -464,7 +469,9 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/pegasus-fuar-lojistik-stajyer-ilani": "2026-10-12",
       "https://kariyermerkezi.marmara.edu.tr/notice/polipedia-uzun-donem-stajyer-ilani": "2026-10-12",
       "https://kariyermerkezi.marmara.edu.tr/notice/umudum-egitim-burs-programi": "2026-10-12",
-      "https://kariyermerkezi.marmara.edu.tr/notice/garanti-bbva-genc-kampus-elcileri-programi": "2026-10-13"
+      "https://kariyermerkezi.marmara.edu.tr/notice/garanti-bbva-genc-kampus-elcileri-programi": "2026-10-13",
+      "https://kariyermerkezi.marmara.edu.tr/notice/akare-yurt-disi-egitim-fuarlari": "2026-10-15",
+      "https://kariyermerkezi.marmara.edu.tr/notice/iyi-gelecek-staj-programi": "2026-10-15"
     }
   },
   "mitto.marmara.edu.tr": {
