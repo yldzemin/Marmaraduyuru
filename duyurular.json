@@ -307,6 +307,11 @@
   "fen.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "7592 Sayılı Kanun Kapsamında Af Yatay Geçiş Başvuru Sonuçları",
+        "tarih": "13.10.2026",
+        "link": "https://fen.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-af-yatay-gecis-basvuru-sonuclari"
+      },
+      {
         "baslik": "TÜBİTAK 4005 Projesinde Fakültemizden Bilimsel Katkı",
         "tarih": "08.10.2026",
         "link": "https://fen.marmara.edu.tr/notice/tubitak-4005-projesinde-fakultemizden-bilimsel-katki"
@@ -375,14 +380,11 @@
         "baslik": "2026-YKS Sonucu Üniversitemize Kayıt İşlemleri",
         "tarih": "18.08.2026",
         "link": "https://oidb.marmara.edu.tr/notice/2026-yks-sonucu-universitemize-kayit-islemleri"
-      },
-      {
-        "baslik": "7592 SAYILI KANUN KAPSAMINDA ÜNİVERSİTEMİZE AF BAŞVURUSU YAPACAK ADAYLARIN DİKKATİNE",
-        "tarih": "11.08.2026",
-        "link": "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-basvurusu-yapacak-adaylarin-dikkatine"
       }
     ],
-    "gecmis": {}
+    "gecmis": {
+      "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-basvurusu-yapacak-adaylarin-dikkatine": "2026-10-16"
+    }
   },
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
