@@ -394,6 +394,11 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Beymen Etkinlik",
+        "tarih": "19.10.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/beymen-etkinlik"
+      },
+      {
         "baslik": "İş Hayatına Hazırlık Zirvesi",
         "tarih": "14.10.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/is-hayatina-hazirlik-zirvesi"
@@ -462,11 +467,6 @@
         "baslik": "Konto Sayım Part Time İş",
         "tarih": "02.10.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/konto-sayim-part-time-is"
-      },
-      {
-        "baslik": "2026 yılı Meslek Personeli",
-        "tarih": "02.10.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/2026-yili-meslek-personeli"
       }
     ],
     "gecmis": {
@@ -478,7 +478,8 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/umudum-egitim-burs-programi": "2026-10-12",
       "https://kariyermerkezi.marmara.edu.tr/notice/garanti-bbva-genc-kampus-elcileri-programi": "2026-10-13",
       "https://kariyermerkezi.marmara.edu.tr/notice/akare-yurt-disi-egitim-fuarlari": "2026-10-15",
-      "https://kariyermerkezi.marmara.edu.tr/notice/iyi-gelecek-staj-programi": "2026-10-15"
+      "https://kariyermerkezi.marmara.edu.tr/notice/iyi-gelecek-staj-programi": "2026-10-15",
+      "https://kariyermerkezi.marmara.edu.tr/notice/2026-yili-meslek-personeli": "2026-10-19"
     }
   },
   "mitto.marmara.edu.tr": {
