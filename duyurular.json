@@ -312,6 +312,16 @@
   "fen.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Kimya Bölümü Öğrencilerimiz 4. Önlük Giyme Töreninde Beyaz Önlüklerini Giydi",
+        "tarih": "20.10.2026",
+        "link": "https://fen.marmara.edu.tr/notice/kimya-bolumu-ogrencilerimiz-4-onluk-giyme-toreninde-beyaz-onluklerini-giydi"
+      },
+      {
+        "baslik": "Fakültemiz YÖK Araştırma Üniversiteleri Değerlendirme Toplantısında Temsil Edildi",
+        "tarih": "13.10.2026",
+        "link": "https://fen.marmara.edu.tr/notice/fakultemiz-yok-arastirma-universiteleri-degerlendirme-toplantisinda-temsil-edildi"
+      },
+      {
         "baslik": "7592 Sayılı Kanun Kapsamında Af Yatay Geçiş Başvuru Sonuçları",
         "tarih": "13.10.2026",
         "link": "https://fen.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-af-yatay-gecis-basvuru-sonuclari"
@@ -375,20 +385,12 @@
         "baslik": "2026-2027 Eğitim Öğretim Yılı Güz Dönemi Kurumlar Arası ve Kurum İçi Yatay Geçiş Sonuç İlanı ve Kayıt İşlemleri",
         "tarih": "31.08.2026",
         "link": "https://oidb.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-kurumlar-arasi-ve-kurum-ici-yatay-gecis-sonuc-ilani-ve-kayit-islemleri"
-      },
-      {
-        "baslik": "44. Madde Kapsamında 2025–2026 Bahar Dönemi Ek Sınav Hakkı",
-        "tarih": "30.08.2026",
-        "link": "https://fen.marmara.edu.tr/notice/44-madde-kapsaminda-2025-2026-bahar-donemi-ek-sinav-hakki"
-      },
-      {
-        "baslik": "2026-YKS Sonucu Üniversitemize Kayıt İşlemleri",
-        "tarih": "18.08.2026",
-        "link": "https://oidb.marmara.edu.tr/notice/2026-yks-sonucu-universitemize-kayit-islemleri"
       }
     ],
     "gecmis": {
-      "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-basvurusu-yapacak-adaylarin-dikkatine": "2026-10-16"
+      "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-basvurusu-yapacak-adaylarin-dikkatine": "2026-10-16",
+      "https://fen.marmara.edu.tr/notice/44-madde-kapsaminda-2025-2026-bahar-donemi-ek-sinav-hakki": "2026-10-22",
+      "https://oidb.marmara.edu.tr/notice/2026-yks-sonucu-universitemize-kayit-islemleri": "2026-10-22"
     }
   },
   "kariyermerkezi.marmara.edu.tr": {
@@ -685,6 +687,11 @@
   "sustainability.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Gençlerin İklim Talepleri Endüstri Radyo’da!",
+        "tarih": "21.10.2026",
+        "link": "https://sustainability.marmara.edu.tr/notice/genclerin-iklim-talepleri-endustri-radyoda"
+      },
+      {
         "baslik": "Marmara Üniversitesi, 24 Projesiyle COP31’de!",
         "tarih": "13.10.2026",
         "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-24-projesiyle-cop31de"
@@ -750,8 +757,7 @@
         "link": "https://sustainability.marmara.edu.tr/notice/tuseb-ile-sabiotekden-is-birligi-protokolu"
       }
     ],
-    "gecmis": {},
-    "hata": 1
+    "gecmis": {}
   },
   "teknoloji.marmara.edu.tr": {
     "sayfa": [
@@ -840,6 +846,11 @@
   "ubf.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Dijital Oyun Tasarımı Bölümü için Araştırma Görevlisi Ön Değerlendirme Sonuçları",
+        "tarih": "21.10.2026",
+        "link": "https://ubf.marmara.edu.tr/notice/dijital-oyun-tasarimi-bolumu-icin-arastirma-gorevlisi-on-degerlendirme-sonuclari"
+      },
+      {
         "baslik": "Yapay Zeka Ve Makine Öğrenmesi Bölümü için Araştırma Görevlisi ve Öğretim Görevlisi Ön Değerlendirme Sonuçları",
         "tarih": "21.10.2026",
         "link": "https://ubf.marmara.edu.tr/notice/yapay-zeka-ve-makine-ogrenmesi-bolumu-icin-arastirma-gorevlisi-ve-ogretim-gorevlisi-on-degerlendirme-sonuclari"
@@ -908,15 +919,11 @@
         "baslik": "2025-2026 Öğretim Yılı YABANCI DİL MUAFİYET SINAVI Hakkında",
         "tarih": "25.09.2025",
         "link": "https://ubf.marmara.edu.tr/notice/2025-2026-ogretim-yili-yabanci-dil-muafiyet-sinavi-hakkinda"
-      },
-      {
-        "baslik": "Dijital Oyun Tasarımı Öğretim Görevlisi Nihai Değerlendirme Sonucu",
-        "tarih": "11.09.2025",
-        "link": "https://ubf.marmara.edu.tr/notice/dijital-oyun-tasarimi-ogretim-gorevlisi-nihai-degerlendirme-sonucu"
       }
     ],
     "gecmis": {
-      "https://ubf.marmara.edu.tr/notice/44madde-kapsaminda-2024-2025-bahar-donemi-ek-sinav-hakki": "2026-10-21"
+      "https://ubf.marmara.edu.tr/notice/44madde-kapsaminda-2024-2025-bahar-donemi-ek-sinav-hakki": "2026-10-21",
+      "https://ubf.marmara.edu.tr/notice/dijital-oyun-tasarimi-ogretim-gorevlisi-nihai-degerlendirme-sonucu": "2026-10-22"
     }
   },
   "uluslararasi.marmara.edu.tr": {
