@@ -687,6 +687,16 @@
   "sustainability.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Marmara Üniversitesi, AB İklim İdeatonu 2026 İstanbul Jürisinde Yer Aldı!",
+        "tarih": "23.10.2026",
+        "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-ab-iklim-ideatonu-2026-istanbul-jurisinde-yer-aldi"
+      },
+      {
+        "baslik": "Marmara Üniversitesi, COP31 Sürdürülebilir Dönüşüm Ödülleri’nde Jüri Üyeliği ile Yer Aldı!",
+        "tarih": "23.10.2026",
+        "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-cop31-surdurulebilir-donusum-odullerinde-juri-uyeligi-ile-yer-aldi"
+      },
+      {
         "baslik": "Gençlerin İklim Talepleri Endüstri Radyo’da!",
         "tarih": "21.10.2026",
         "link": "https://sustainability.marmara.edu.tr/notice/genclerin-iklim-talepleri-endustri-radyoda"
@@ -750,14 +760,11 @@
         "baslik": "TÜBİTAK İran İkili İş birliği Proje Başarısı",
         "tarih": "25.01.2023",
         "link": "https://sustainability.marmara.edu.tr/notice/tubitak-iran-ikili-is-birligi-proje-basarisi"
-      },
-      {
-        "baslik": "TÜSEB ile SABİOTEK’den İş Birliği Protokolü",
-        "tarih": "03.01.2023",
-        "link": "https://sustainability.marmara.edu.tr/notice/tuseb-ile-sabiotekden-is-birligi-protokolu"
       }
     ],
-    "gecmis": {}
+    "gecmis": {
+      "https://sustainability.marmara.edu.tr/notice/tuseb-ile-sabiotekden-is-birligi-protokolu": "2026-10-23"
+    }
   },
   "teknoloji.marmara.edu.tr": {
     "sayfa": [
