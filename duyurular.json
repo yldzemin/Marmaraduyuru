@@ -687,6 +687,11 @@
   "sustainability.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Marmara Üniversitesi, İSO Sürdürülebilirlik Platformu Toplantısında Yer Aldı!",
+        "tarih": "23.10.2026",
+        "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-iso-surdurulebilirlik-platformu-toplantisinda-yer-aldi"
+      },
+      {
         "baslik": "Marmara Üniversitesi, AB İklim İdeatonu 2026 İstanbul Jürisinde Yer Aldı!",
         "tarih": "23.10.2026",
         "link": "https://sustainability.marmara.edu.tr/notice/marmara-universitesi-ab-iklim-ideatonu-2026-istanbul-jurisinde-yer-aldi"
@@ -755,15 +760,11 @@
         "baslik": "CVL4OT Projesi Başarı ile Tamamlandı",
         "tarih": "22.05.2023",
         "link": "https://sustainability.marmara.edu.tr/notice/cvl4ot-projesi-basari-ile-tamamlandi"
-      },
-      {
-        "baslik": "TÜBİTAK İran İkili İş birliği Proje Başarısı",
-        "tarih": "25.01.2023",
-        "link": "https://sustainability.marmara.edu.tr/notice/tubitak-iran-ikili-is-birligi-proje-basarisi"
       }
     ],
     "gecmis": {
-      "https://sustainability.marmara.edu.tr/notice/tuseb-ile-sabiotekden-is-birligi-protokolu": "2026-10-23"
+      "https://sustainability.marmara.edu.tr/notice/tuseb-ile-sabiotekden-is-birligi-protokolu": "2026-10-23",
+      "https://sustainability.marmara.edu.tr/notice/tubitak-iran-ikili-is-birligi-proje-basarisi": "2026-10-24"
     }
   },
   "teknoloji.marmara.edu.tr": {
@@ -1035,6 +1036,11 @@
   },
   "www.marmara.edu.tr": {
     "sayfa": [
+      {
+        "baslik": "PHP ve Node.js Güvenlik Açıklarına İlişkin Bilgilendirme",
+        "tarih": "24.10.2026",
+        "link": "https://bidb.marmara.edu.tr/notice/php-ve-nodejs-guvenlik-aciklarina-iliskin-bilgilendirme"
+      },
       {
         "baslik": "7592 Sayılı Kanun Kapsamında Üniversitemize Af Yatay Geçiş İşlemleri",
         "tarih": "24.09.2026",
