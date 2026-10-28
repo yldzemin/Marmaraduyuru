@@ -672,14 +672,9 @@
   "sks.marmara.edu.tr": {
     "sayfa": [
       {
-        "baslik": "Ücretsiz Öğrenci Kursları Ön Başvuruları Başlıyor - Göztepe Yerleşkesi",
-        "tarih": "05.10.2026",
-        "link": "https://sks.marmara.edu.tr/notice/ucretsiz-ogrenci-kurslari-on-basvurulari-basliyor-goztepe-yerleskesi"
-      },
-      {
-        "baslik": "Fitness Salonları Ön Kayıt Başvuruları Başlıyor (5 - 7 Ekim 2026)",
-        "tarih": "02.10.2026",
-        "link": "https://sks.marmara.edu.tr/notice/fitness-salonlari-on-kayit-basvurulari-basliyor-5-7-ekim-2026"
+        "baslik": "İŞKUR Gençlik Programı Başvuruları Başladı",
+        "tarih": "28.10.2026",
+        "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-basvurulari-basladi-1"
       },
       {
         "baslik": "Avrupa'nın Zirvesinde Bir Marmara Fırtınası: Tiran’da Tarihi Şampiyonluk!",
@@ -687,7 +682,10 @@
         "link": "https://sks.marmara.edu.tr/notice/avrupanin-zirvesinde-bir-marmara-firtinasi-tiranda-tarihi-sampiyonluk"
       }
     ],
-    "gecmis": {}
+    "gecmis": {
+      "https://sks.marmara.edu.tr/notice/fitness-salonlari-on-kayit-basvurulari-basliyor-5-7-ekim-2026": "2026-10-28",
+      "https://sks.marmara.edu.tr/notice/ucretsiz-ogrenci-kurslari-on-basvurulari-basliyor-goztepe-yerleskesi": "2026-10-28"
+    }
   },
   "sustainability.marmara.edu.tr": {
     "sayfa": [
@@ -1047,6 +1045,11 @@
   "www.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "PHP ve Node.js Güvenlik Açıklarına İlişkin Bilgilendirme",
+        "tarih": "24.10.2026",
+        "link": "https://bidb.marmara.edu.tr/notice/php-ve-nodejs-guvenlik-aciklarina-iliskin-bilgilendirme"
+      },
+      {
         "baslik": "7592 Sayılı Kanun Kapsamında Üniversitemize Af Yatay Geçiş İşlemleri",
         "tarih": "24.09.2026",
         "link": "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-yatay-gecis-islemleri"
@@ -1091,8 +1094,7 @@
       "https://oidb.marmara.edu.tr/notice/2026-yuksekogretim-kurumlari-sinavi-yks-ek-yerlestirme-sonucu-universitemize-kayit-islemleri": "2026-10-12",
       "https://www.marmara.edu.tr/notice/marmara-universitesi-rektorlugunden-surekli-isci-alim-ilani-eski-hukumlutmy": "2026-10-12",
       "https://www.marmara.edu.tr/notice/akademik-ilan-35": "2026-10-14",
-      "https://oidb.marmara.edu.tr/notice/2026-yks-kapsaminda-spor-bilimleri-icin-ozel-yetenek-sinavi-ozyesyerlestirme-kayit-islemleri": "2026-10-21",
-      "https://bidb.marmara.edu.tr/notice/php-ve-nodejs-guvenlik-aciklarina-iliskin-bilgilendirme": "2026-10-25"
+      "https://oidb.marmara.edu.tr/notice/2026-yks-kapsaminda-spor-bilimleri-icin-ozel-yetenek-sinavi-ozyesyerlestirme-kayit-islemleri": "2026-10-21"
     }
   }
 }
