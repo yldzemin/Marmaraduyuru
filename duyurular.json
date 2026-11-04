@@ -207,6 +207,11 @@
   "fbe.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "2026–2027 Eğitim-Öğretim Yılı Güz Dönemi İş Güvenliği ve Mühendislik Yönetimi Programları Ara Sınav Takvimi",
+        "tarih": "04.11.2026",
+        "link": "https://fbe.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-is-guvenligi-ve-muhendislik-yonetimi-programlari-ara-sinav-takvimi"
+      },
+      {
         "baslik": "Açık Erişim Uygulamaları ve DergiPark'ta Yeni Süreçler Etkinliği",
         "tarih": "26.10.2026",
         "link": "https://fbe.marmara.edu.tr/notice/acik-erisim-uygulamalari-ve-dergiparkta-yeni-surecler-etkinligi"
@@ -785,6 +790,16 @@
   "teknoloji.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Tasarım ve İmalat Anabilim Dalı Araştırma Görevlisi İlanı Nihai Değerlendirme Sonuçları",
+        "tarih": "04.11.2026",
+        "link": "https://teknoloji.marmara.edu.tr/notice/tasarim-ve-imalat-anabilim-dali-arastirma-gorevlisi-ilani-nihai-degerlendirme-sonuclari"
+      },
+      {
+        "baslik": "Erasmus+ Yabancı Dil Yeterlilik Sınavı Başvuruları",
+        "tarih": "04.11.2026",
+        "link": "https://teknoloji.marmara.edu.tr/notice/erasmus-yabanci-dil-yeterlilik-sinavi-basvurulari"
+      },
+      {
         "baslik": "Tasarım ve İmalat Anabilim Dalı Araştırma Görevlisi Alımı Ön Değerlendirme Sonuçları",
         "tarih": "20.10.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/tasarim-ve-imalat-anabilim-dali-arastirma-gorevlisi-alimi-on-degerlendirme-sonuclari"
@@ -848,22 +863,14 @@
         "baslik": "Teknoloji Fakültesi 2025 - 2026 Mezuniyet Töreni",
         "tarih": "18.06.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/teknoloji-fakultesi-2025-2026-mezuniyet-toreni"
-      },
-      {
-        "baslik": "2025-2026 Eğitim Öğretim Yılında Yaz Okulunda Farklı Birim ve Farklı Üniversiteden Ders Alma",
-        "tarih": "05.06.2026",
-        "link": "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yilinda-yaz-okulunda-farkli-birim-ve-farkli-universiteden-ders-alma"
-      },
-      {
-        "baslik": "Final ve Bütünlemede Ortak Sınavların Derslik Bilgilendirmesi",
-        "tarih": "03.06.2026",
-        "link": "https://teknoloji.marmara.edu.tr/notice/final-ve-butunlemede-ortak-sinavlarin-derslik-bilgilendirmesi"
       }
     ],
     "gecmis": {
       "https://teknoloji.marmara.edu.tr/notice/amc-2026-eklemeli-imalat-konferansi-fakultemizin-onemli-katkisi-ile-duzenlendi": "2026-10-12",
       "https://teknoloji.marmara.edu.tr/notice/10-uluslararasi-yapay-zeka-ve-veri-isleme-sempozyumu-bu-yil-marmara-universitesinde": "2026-10-13",
-      "https://teknoloji.marmara.edu.tr/notice/marmara-universitesi-insansiz-hava-araclari-kulubu-iha-marmara-basarisi": "2026-10-21"
+      "https://teknoloji.marmara.edu.tr/notice/marmara-universitesi-insansiz-hava-araclari-kulubu-iha-marmara-basarisi": "2026-10-21",
+      "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yilinda-yaz-okulunda-farkli-birim-ve-farkli-universiteden-ders-alma": "2026-11-04",
+      "https://teknoloji.marmara.edu.tr/notice/final-ve-butunlemede-ortak-sinavlarin-derslik-bilgilendirmesi": "2026-11-04"
     }
   },
   "ubf.marmara.edu.tr": {
