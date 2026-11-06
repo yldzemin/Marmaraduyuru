@@ -700,11 +700,6 @@
         "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listeleri-noter-kurasiyla-belirlendi"
       },
       {
-        "baslik": "İŞKUR Gençlik Programı Başvuruları Başladı",
-        "tarih": "28.10.2026",
-        "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-basvurulari-basladi-1"
-      },
-      {
         "baslik": "Avrupa'nın Zirvesinde Bir Marmara Fırtınası: Tiran’da Tarihi Şampiyonluk!",
         "tarih": "14.09.2026",
         "link": "https://sks.marmara.edu.tr/notice/avrupanin-zirvesinde-bir-marmara-firtinasi-tiranda-tarihi-sampiyonluk"
@@ -712,7 +707,8 @@
     ],
     "gecmis": {
       "https://sks.marmara.edu.tr/notice/fitness-salonlari-on-kayit-basvurulari-basliyor-5-7-ekim-2026": "2026-10-28",
-      "https://sks.marmara.edu.tr/notice/ucretsiz-ogrenci-kurslari-on-basvurulari-basliyor-goztepe-yerleskesi": "2026-10-28"
+      "https://sks.marmara.edu.tr/notice/ucretsiz-ogrenci-kurslari-on-basvurulari-basliyor-goztepe-yerleskesi": "2026-10-28",
+      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-basvurulari-basladi-1": "2026-11-06"
     }
   },
   "sustainability.marmara.edu.tr": {
