@@ -82,6 +82,11 @@
   "bapko.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "2026 YILI MALİ YIL SONU KAPANIŞ İŞLEMLERİ HAKKINDA DUYURU",
+        "tarih": "09.11.2026",
+        "link": "https://bapko.marmara.edu.tr/notice/2026-yili-mali-yil-sonu-kapanis-islemleri-hakkinda-duyuru"
+      },
+      {
         "baslik": "ADEP VE NAP PROJELERİ 2027 BAŞVURU ÇAĞRISI",
         "tarih": "16.10.2026",
         "link": "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi"
@@ -406,6 +411,36 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "2D GAME ARTIST",
+        "tarih": "09.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/2d-game-artist"
+      },
+      {
+        "baslik": "Henkel Step Up Inclusive Programı",
+        "tarih": "09.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/henkel-step-up-inclusive-programi"
+      },
+      {
+        "baslik": "Turkcell Yarının Teknoloji Liderleri - 3. Sezon Duyurusu",
+        "tarih": "09.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/turkcell-yarinin-teknoloji-liderleri-3-sezon-duyurusu"
+      },
+      {
+        "baslik": "İş İlanı | Turizm Satış ve Rezervasyon Sorumlusu",
+        "tarih": "09.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/is-ilani-turizm-satis-ve-rezervasyon-sorumlusu"
+      },
+      {
+        "baslik": "AIESEC FIRSATLARI",
+        "tarih": "09.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/aiesec-firsatlari"
+      },
+      {
+        "baslik": "UZUN DÖNEM İNSAN KAYNAKLARI STAJYERİ - Metasis Teknoloji",
+        "tarih": "09.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-insan-kaynaklari-stajyeri-metasis-teknoloji"
+      },
+      {
         "baslik": "Seyrüsefer Sistemleri Speed Bootcamp Seyrüsefer Başvuruları Devam Ediyor!",
         "tarih": "05.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/seyrusefer-sistemleri-speed-bootcamp-seyrusefer-basvurulari-devam-ediyor"
@@ -449,36 +484,6 @@
         "baslik": "Step Up Inclusive programı",
         "tarih": "02.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/step-up-inclusive-programi"
-      },
-      {
-        "baslik": "KÜPPELİ | MAĞAZA SATIŞ DANIŞMANI İŞ İLANI",
-        "tarih": "02.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/kuppeli-magaza-satis-danismani-is-ilani"
-      },
-      {
-        "baslik": "Geleceği Sen Yaz Programı",
-        "tarih": "02.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/gelecegi-sen-yaz-programi"
-      },
-      {
-        "baslik": "yarı zamanlı satış ortağı ilanı – Bayrak Systems",
-        "tarih": "02.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/yari-zamanli-satis-ortagi-ilani-bayrak-systems"
-      },
-      {
-        "baslik": "Cryocan - Muhasebe Departmanı Uzun Dönem Stajyer İlanı",
-        "tarih": "02.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/cryocan-muhasebe-departmani-uzun-donem-stajyer-ilani"
-      },
-      {
-        "baslik": "Borusan Eşitlik Okulu Ücretsiz Sertifika Programı",
-        "tarih": "21.10.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/borusan-esitlik-okulu-ucretsiz-sertifika-programi"
-      },
-      {
-        "baslik": "Uzun Dönem Endüstri Mühendisliği Stajyeri",
-        "tarih": "21.10.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-endustri-muhendisligi-stajyeri"
       }
     ],
     "gecmis": {
@@ -514,7 +519,13 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/rasyotek-stajyer-ilani-finans-muhasebe": "2026-11-02",
       "https://kariyermerkezi.marmara.edu.tr/notice/saglikli-bir-fikrim-var-proje-yarismasi": "2026-11-02",
       "https://kariyermerkezi.marmara.edu.tr/notice/yurtdisi-satis-muhendisi": "2026-11-02",
-      "https://kariyermerkezi.marmara.edu.tr/notice/hyundai-ideathon": "2026-11-05"
+      "https://kariyermerkezi.marmara.edu.tr/notice/hyundai-ideathon": "2026-11-05",
+      "https://kariyermerkezi.marmara.edu.tr/notice/borusan-esitlik-okulu-ucretsiz-sertifika-programi": "2026-11-09",
+      "https://kariyermerkezi.marmara.edu.tr/notice/cryocan-muhasebe-departmani-uzun-donem-stajyer-ilani": "2026-11-09",
+      "https://kariyermerkezi.marmara.edu.tr/notice/gelecegi-sen-yaz-programi": "2026-11-09",
+      "https://kariyermerkezi.marmara.edu.tr/notice/kuppeli-magaza-satis-danismani-is-ilani": "2026-11-09",
+      "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-endustri-muhendisligi-stajyeri": "2026-11-09",
+      "https://kariyermerkezi.marmara.edu.tr/notice/yari-zamanli-satis-ortagi-ilani-bayrak-systems": "2026-11-09"
     }
   },
   "mitto.marmara.edu.tr": {
@@ -798,6 +809,11 @@
   "teknoloji.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "2026-2027 EĞİTİM-ÖĞRETİM YILI GÜZ DÖNEMİ ORTAK DERS SINAVLARI HAKKINDA DUYURU",
+        "tarih": "09.11.2026",
+        "link": "https://teknoloji.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-ortak-ders-sinavlari-hakkinda-duyuru"
+      },
+      {
         "baslik": "Tasarım ve İmalat Anabilim Dalı Araştırma Görevlisi İlanı Nihai Değerlendirme Sonuçları",
         "tarih": "04.11.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/tasarim-ve-imalat-anabilim-dali-arastirma-gorevlisi-ilani-nihai-degerlendirme-sonuclari"
@@ -866,11 +882,6 @@
         "baslik": "2025-2026 Eğitim-Öğretim Yılı Bölümlerimizde ve Fakültemizde Dereceye Giren Öğrenciler",
         "tarih": "02.07.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yili-bolumlerimizde-ve-fakultemizde-dereceye-giren-ogrenciler"
-      },
-      {
-        "baslik": "Teknoloji Fakültesi 2025 - 2026 Mezuniyet Töreni",
-        "tarih": "18.06.2026",
-        "link": "https://teknoloji.marmara.edu.tr/notice/teknoloji-fakultesi-2025-2026-mezuniyet-toreni"
       }
     ],
     "gecmis": {
@@ -878,7 +889,8 @@
       "https://teknoloji.marmara.edu.tr/notice/10-uluslararasi-yapay-zeka-ve-veri-isleme-sempozyumu-bu-yil-marmara-universitesinde": "2026-10-13",
       "https://teknoloji.marmara.edu.tr/notice/marmara-universitesi-insansiz-hava-araclari-kulubu-iha-marmara-basarisi": "2026-10-21",
       "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yilinda-yaz-okulunda-farkli-birim-ve-farkli-universiteden-ders-alma": "2026-11-04",
-      "https://teknoloji.marmara.edu.tr/notice/final-ve-butunlemede-ortak-sinavlarin-derslik-bilgilendirmesi": "2026-11-04"
+      "https://teknoloji.marmara.edu.tr/notice/final-ve-butunlemede-ortak-sinavlarin-derslik-bilgilendirmesi": "2026-11-04",
+      "https://teknoloji.marmara.edu.tr/notice/teknoloji-fakultesi-2025-2026-mezuniyet-toreni": "2026-11-09"
     }
   },
   "ubf.marmara.edu.tr": {
@@ -968,6 +980,16 @@
   "uluslararasi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "ERASMUS+ KA131 PERSONEL EĞİTİM ALMA HAREKETLİLİĞİ BAŞVURU ÇAĞRISI",
+        "tarih": "09.11.2026",
+        "link": "https://uluslararasi.marmara.edu.tr/notice/erasmus-ka131-personel-egitim-alma-hareketliligi-basvuru-cagrisi-1"
+      },
+      {
+        "baslik": "ERASMUS+ KA131 PERSONEL DERS VERME HAREKETLİLİĞİ BAŞVURU ÇAĞRISI",
+        "tarih": "09.11.2026",
+        "link": "https://uluslararasi.marmara.edu.tr/notice/erasmus-ka131-personel-ders-verme-hareketliligi-basvuru-cagrisi-1"
+      },
+      {
         "baslik": "2026-2027 AKADEMİK YILI ERASMUS+ YABANCI DİL YETERLİLİK SINAVI BAŞVURU DUYURUSU",
         "tarih": "02.11.2026",
         "link": "https://uluslararasi.marmara.edu.tr/notice/2026-2027-akademik-yili-erasmus-yabanci-dil-yeterlilik-sinavi-basvuru-duyurusu"
@@ -1031,20 +1053,12 @@
         "baslik": "ERASMUS+ KA131 ÖĞRENCİ STAJ HAREKETLİLİĞİ BAŞVURU İLANI  (2025 PROJE DÖNEMİ)",
         "tarih": "13.02.2026",
         "link": "https://uluslararasi.marmara.edu.tr/notice/erasmus-ka131-ogrenci-staj-hareketliligi-basvuru-ilani-2025-proje-donemi"
-      },
-      {
-        "baslik": "MARMARA ÜNİVERSİTESİ ERASMUS+ KA131 ÖĞRENCİ ÖĞRENİM HAREKETLİLİĞİ BAŞVURU ÇAĞRISI (2025 PROJE DÖNEMİ)",
-        "tarih": "13.02.2026",
-        "link": "https://uluslararasi.marmara.edu.tr/notice/marmara-universitesi-erasmus-ka131-ogrenci-ogrenim-hareketliligi-basvuru-cagrisi-2025-proje-donemi"
-      },
-      {
-        "baslik": "ERASMUS YABANCI DİL SINAV SONUÇLARI",
-        "tarih": "23.01.2026",
-        "link": "https://uluslararasi.marmara.edu.tr/notice/erasmus-yabanci-dil-sinav-sonuclari"
       }
     ],
     "gecmis": {
-      "https://uluslararasi.marmara.edu.tr/notice/erasmus-yabanci-dil-sinav-yerleri-1": "2026-11-02"
+      "https://uluslararasi.marmara.edu.tr/notice/erasmus-yabanci-dil-sinav-yerleri-1": "2026-11-02",
+      "https://uluslararasi.marmara.edu.tr/notice/erasmus-yabanci-dil-sinav-sonuclari": "2026-11-09",
+      "https://uluslararasi.marmara.edu.tr/notice/marmara-universitesi-erasmus-ka131-ogrenci-ogrenim-hareketliligi-basvuru-cagrisi-2025-proje-donemi": "2026-11-09"
     }
   },
   "uzem.marmara.edu.tr": {
