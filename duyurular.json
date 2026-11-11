@@ -337,6 +337,11 @@
   "fen.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Ortak Zorunlu Dersler Ara Sınav Takvimi ve Derslik Dağılımları",
+        "tarih": "25.10.2026",
+        "link": "https://fen.marmara.edu.tr/notice/ortak-zorunlu-dersler-ara-sinav-takvimi-ve-derslik-dagilimlari"
+      },
+      {
         "baslik": "Kimya Bölümü Öğrencilerimiz 4. Önlük Giyme Töreninde Beyaz Önlüklerini Giydi",
         "tarih": "20.10.2026",
         "link": "https://fen.marmara.edu.tr/notice/kimya-bolumu-ogrencilerimiz-4-onluk-giyme-toreninde-beyaz-onluklerini-giydi"
@@ -405,17 +410,13 @@
         "baslik": "Fakültemiz ICBME 2026’da Uluslararası Başarıyla Temsil Edildi",
         "tarih": "01.09.2026",
         "link": "https://fen.marmara.edu.tr/notice/fakultemiz-icbme-2026da-uluslararasi-basariyla-temsil-edildi"
-      },
-      {
-        "baslik": "2026-2027 Eğitim Öğretim Yılı Güz Dönemi Kurumlar Arası ve Kurum İçi Yatay Geçiş Sonuç İlanı ve Kayıt İşlemleri",
-        "tarih": "31.08.2026",
-        "link": "https://oidb.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-kurumlar-arasi-ve-kurum-ici-yatay-gecis-sonuc-ilani-ve-kayit-islemleri"
       }
     ],
     "gecmis": {
       "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-basvurusu-yapacak-adaylarin-dikkatine": "2026-10-16",
       "https://fen.marmara.edu.tr/notice/44-madde-kapsaminda-2025-2026-bahar-donemi-ek-sinav-hakki": "2026-10-22",
-      "https://oidb.marmara.edu.tr/notice/2026-yks-sonucu-universitemize-kayit-islemleri": "2026-10-22"
+      "https://oidb.marmara.edu.tr/notice/2026-yks-sonucu-universitemize-kayit-islemleri": "2026-10-22",
+      "https://oidb.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-kurumlar-arasi-ve-kurum-ici-yatay-gecis-sonuc-ilani-ve-kayit-islemleri": "2026-11-11"
     }
   },
   "kariyermerkezi.marmara.edu.tr": {
@@ -716,11 +717,6 @@
         "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-belge-yukleme-duyurusu"
       },
       {
-        "baslik": "İŞKUR Gençlik Programı Asil Listede Yer Alan Öğrenciler İçin Taahhütname İmzalanması Duyurusu",
-        "tarih": "05.11.2026",
-        "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-taahhutname-imzalanmasi-duyurusu"
-      },
-      {
         "baslik": "İŞKUR Gençlik Programı Asil Listeleri Noter kurasıyla belirlendi",
         "tarih": "05.11.2026",
         "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listeleri-noter-kurasiyla-belirlendi"
@@ -734,7 +730,8 @@
     "gecmis": {
       "https://sks.marmara.edu.tr/notice/fitness-salonlari-on-kayit-basvurulari-basliyor-5-7-ekim-2026": "2026-10-28",
       "https://sks.marmara.edu.tr/notice/ucretsiz-ogrenci-kurslari-on-basvurulari-basliyor-goztepe-yerleskesi": "2026-10-28",
-      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-basvurulari-basladi-1": "2026-11-06"
+      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-basvurulari-basladi-1": "2026-11-06",
+      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-taahhutname-imzalanmasi-duyurusu": "2026-11-11"
     }
   },
   "sustainability.marmara.edu.tr": {
