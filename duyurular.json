@@ -2,6 +2,11 @@
   "avrupa.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "AVRUPA KOLEJİ YÜKSEK LİSANS BURS PROGRAMI DUYURUSU",
+        "tarih": "16.11.2026",
+        "link": "https://avrupa.marmara.edu.tr/notice/avrupa-koleji-yuksek-lisans-burs-programi-duyurusu-1"
+      },
+      {
         "baslik": "7592 SAYILI KANUN KAPSAMINDA ENSTİTÜMÜZE AF BAŞVURUSU YAPACAK ADAYLARIN DİKKATİNE",
         "tarih": "11.08.2026",
         "link": "https://avrupa.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-enstitumuze-af-basvurusu-yapacak-adaylarin-dikkatine"
@@ -70,11 +75,6 @@
         "baslik": "Marmara Avrupa Çalışmaları Konferansı",
         "tarih": "10.09.2019",
         "link": "http://etkinlik.marmara.edu.tr/mces-2020"
-      },
-      {
-        "baslik": "Marmara Avrupa Haftası Etkinlikleri 2018",
-        "tarih": "24.04.2018",
-        "link": "https://avrupa.marmara.edu.tr/notice/marmara-avrupa-haftasi-etkinlikleri-2018"
       }
     ],
     "gecmis": {
@@ -93,7 +93,8 @@
       "https://avrupa.marmara.edu.tr/notice/istanbul-buyuksehir-belediyesi-genc-universiteli-bursu": "2026-11-12",
       "https://avrupa.marmara.edu.tr/notice/tc-disisleri-bakanligi-avrupa-birligi-baskanligi-avrupa-koleji-yuksek-lisans-burs-programi-duyurusu": "2026-11-12",
       "https://avrupa.marmara.edu.tr/notice/universitelerde-esps-burs-projesinin-yuksek-ogretim-ogrencileri-icin-ab-burslari-duyurulmasi-hk": "2026-11-12",
-      "https://www.yesilay.org.tr/tr/burs-basvurusu#scholarshipProcess | YEŞİLAY LİSANSÜSTÜ TEZ ARAŞTIRMA BURSU DESTEK PROGRAMI": "2026-11-12"
+      "https://www.yesilay.org.tr/tr/burs-basvurusu#scholarshipProcess | YEŞİLAY LİSANSÜSTÜ TEZ ARAŞTIRMA BURSU DESTEK PROGRAMI": "2026-11-12",
+      "https://avrupa.marmara.edu.tr/notice/marmara-avrupa-haftasi-etkinlikleri-2018": "2026-11-16"
     }
   },
   "bapko.marmara.edu.tr": {
@@ -344,6 +345,11 @@
   "fen.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "2026–2027 Güz Yarıyılı Ara Sınav Mazeret Başvuruları",
+        "tarih": "08.11.2026",
+        "link": "https://fen.marmara.edu.tr/notice/2026-2027-guz-yariyili-ara-sinav-mazeret-basvurulari"
+      },
+      {
         "baslik": "Ortak Zorunlu Dersler Ara Sınav Takvimi ve Derslik Dağılımları",
         "tarih": "25.10.2026",
         "link": "https://fen.marmara.edu.tr/notice/ortak-zorunlu-dersler-ara-sinav-takvimi-ve-derslik-dagilimlari"
@@ -412,18 +418,14 @@
         "baslik": "ICMS 2026 Matematik Bölümümüz Ev Sahipliğinde Gerçekleştirildi",
         "tarih": "07.09.2026",
         "link": "https://fen.marmara.edu.tr/notice/icms-2026-matematik-bolumumuz-ev-sahipliginde-gerceklestirildi"
-      },
-      {
-        "baslik": "Fakültemiz ICBME 2026’da Uluslararası Başarıyla Temsil Edildi",
-        "tarih": "01.09.2026",
-        "link": "https://fen.marmara.edu.tr/notice/fakultemiz-icbme-2026da-uluslararasi-basariyla-temsil-edildi"
       }
     ],
     "gecmis": {
       "https://oidb.marmara.edu.tr/notice/7592-sayili-kanun-kapsaminda-universitemize-af-basvurusu-yapacak-adaylarin-dikkatine": "2026-10-16",
       "https://fen.marmara.edu.tr/notice/44-madde-kapsaminda-2025-2026-bahar-donemi-ek-sinav-hakki": "2026-10-22",
       "https://oidb.marmara.edu.tr/notice/2026-yks-sonucu-universitemize-kayit-islemleri": "2026-10-22",
-      "https://oidb.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-kurumlar-arasi-ve-kurum-ici-yatay-gecis-sonuc-ilani-ve-kayit-islemleri": "2026-11-11"
+      "https://oidb.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-kurumlar-arasi-ve-kurum-ici-yatay-gecis-sonuc-ilani-ve-kayit-islemleri": "2026-11-11",
+      "https://fen.marmara.edu.tr/notice/fakultemiz-icbme-2026da-uluslararasi-basariyla-temsil-edildi": "2026-11-16"
     }
   },
   "kariyermerkezi.marmara.edu.tr": {
