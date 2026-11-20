@@ -105,11 +105,6 @@
         "link": "https://bapko.marmara.edu.tr/notice/2026-yili-mali-yil-sonu-kapanis-islemleri-hakkinda-duyuru"
       },
       {
-        "baslik": "ADEP VE NAP PROJELERİ 2027 BAŞVURU ÇAĞRISI",
-        "tarih": "16.10.2026",
-        "link": "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi"
-      },
-      {
         "baslik": "BAPSİS Kullanımına Yönelik Bilgilendirme Eğitimi Gerçekleştirildi",
         "tarih": "14.10.2026",
         "link": "https://bapko.marmara.edu.tr/notice/bapsis-kullanimina-yonelik-bilgilendirme-egitimi-gerceklestirildi"
@@ -135,7 +130,9 @@
         "link": "https://bapko.marmara.edu.tr/notice/projelerde-bursiyer-calistirilmasina-iliskin-esaslar"
       }
     ],
-    "gecmis": {}
+    "gecmis": {
+      "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi": "2026-11-20"
+    }
   },
   "eng.marmara.edu.tr": {
     "sayfa": [
@@ -730,11 +727,6 @@
   "sks.marmara.edu.tr": {
     "sayfa": [
       {
-        "baslik": "İŞKUR Gençlik Programı Asil Listede Yer Alan Öğrenciler İçin Belge Yükleme Duyurusu",
-        "tarih": "10.11.2026",
-        "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-belge-yukleme-duyurusu"
-      },
-      {
         "baslik": "İŞKUR Gençlik Programı Asil Listeleri Noter kurasıyla belirlendi",
         "tarih": "05.11.2026",
         "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listeleri-noter-kurasiyla-belirlendi"
@@ -749,7 +741,8 @@
       "https://sks.marmara.edu.tr/notice/fitness-salonlari-on-kayit-basvurulari-basliyor-5-7-ekim-2026": "2026-10-28",
       "https://sks.marmara.edu.tr/notice/ucretsiz-ogrenci-kurslari-on-basvurulari-basliyor-goztepe-yerleskesi": "2026-10-28",
       "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-basvurulari-basladi-1": "2026-11-06",
-      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-taahhutname-imzalanmasi-duyurusu": "2026-11-11"
+      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-taahhutname-imzalanmasi-duyurusu": "2026-11-11",
+      "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-asil-listede-yer-alan-ogrenciler-icin-belge-yukleme-duyurusu": "2026-11-20"
     }
   },
   "sustainability.marmara.edu.tr": {
