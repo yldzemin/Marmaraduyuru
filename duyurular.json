@@ -105,6 +105,11 @@
         "link": "https://bapko.marmara.edu.tr/notice/2026-yili-mali-yil-sonu-kapanis-islemleri-hakkinda-duyuru"
       },
       {
+        "baslik": "ADEP VE NAP PROJELERİ 2027 BAŞVURU ÇAĞRISI",
+        "tarih": "16.10.2026",
+        "link": "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi"
+      },
+      {
         "baslik": "BAPSİS Kullanımına Yönelik Bilgilendirme Eğitimi Gerçekleştirildi",
         "tarih": "14.10.2026",
         "link": "https://bapko.marmara.edu.tr/notice/bapsis-kullanimina-yonelik-bilgilendirme-egitimi-gerceklestirildi"
@@ -130,9 +135,7 @@
         "link": "https://bapko.marmara.edu.tr/notice/projelerde-bursiyer-calistirilmasina-iliskin-esaslar"
       }
     ],
-    "gecmis": {
-      "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi": "2026-11-20"
-    }
+    "gecmis": {}
   },
   "eng.marmara.edu.tr": {
     "sayfa": [
@@ -227,11 +230,6 @@
   "fbe.marmara.edu.tr": {
     "sayfa": [
       {
-        "baslik": "2026–2027 Eğitim-Öğretim Yılı Güz Dönemi İş Güvenliği ve Mühendislik Yönetimi Programları Ara Sınav Takvimi",
-        "tarih": "04.11.2026",
-        "link": "https://fbe.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-is-guvenligi-ve-muhendislik-yonetimi-programlari-ara-sinav-takvimi"
-      },
-      {
         "baslik": "Açık Erişim Uygulamaları ve DergiPark'ta Yeni Süreçler Etkinliği",
         "tarih": "26.10.2026",
         "link": "https://fbe.marmara.edu.tr/notice/acik-erisim-uygulamalari-ve-dergiparkta-yeni-surecler-etkinligi"
@@ -257,7 +255,9 @@
         "link": "https://fbe.marmara.edu.tr/notice/kutuphane-tez-teslim-proseduru"
       }
     ],
-    "gecmis": {}
+    "gecmis": {
+      "https://fbe.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-is-guvenligi-ve-muhendislik-yonetimi-programlari-ara-sinav-takvimi": "2026-11-23"
+    }
   },
   "fef.marmara.edu.tr": {
     "sayfa": [
@@ -828,6 +828,11 @@
   "teknoloji.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Makine Mühendisliği Bölümü Öğretim Üyemiz Prof. Dr. Yusuf KAYNAK’a TÜBİTAK 1002-A Proje Desteği",
+        "tarih": "23.11.2026",
+        "link": "https://teknoloji.marmara.edu.tr/notice/makine-muhendisligi-bolumu-ogretim-uyemiz-prof-dr-yusuf-kaynaka-tubitak-1002-a-proje-destegi"
+      },
+      {
         "baslik": "2026-2027 EĞİTİM-ÖĞRETİM YILI GÜZ DÖNEMİ ORTAK DERS SINAVLARI HAKKINDA DUYURU",
         "tarih": "09.11.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/2026-2027-egitim-ogretim-yili-guz-donemi-ortak-ders-sinavlari-hakkinda-duyuru"
@@ -896,11 +901,6 @@
         "baslik": "Yabancı Uyruklu Öğrencilerimizden Staj ve İş Yeri Eğitimini Türkiye’de Yapacakların Dikkatine",
         "tarih": "03.07.2026",
         "link": "https://teknoloji.marmara.edu.tr/notice/yabanci-uyruklu-ogrencilerimizden-staj-ve-is-yeri-egitimini-turkiyede-yapacaklarin-dikkatine"
-      },
-      {
-        "baslik": "2025-2026 Eğitim-Öğretim Yılı Bölümlerimizde ve Fakültemizde Dereceye Giren Öğrenciler",
-        "tarih": "02.07.2026",
-        "link": "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yili-bolumlerimizde-ve-fakultemizde-dereceye-giren-ogrenciler"
       }
     ],
     "gecmis": {
@@ -909,7 +909,8 @@
       "https://teknoloji.marmara.edu.tr/notice/marmara-universitesi-insansiz-hava-araclari-kulubu-iha-marmara-basarisi": "2026-10-21",
       "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yilinda-yaz-okulunda-farkli-birim-ve-farkli-universiteden-ders-alma": "2026-11-04",
       "https://teknoloji.marmara.edu.tr/notice/final-ve-butunlemede-ortak-sinavlarin-derslik-bilgilendirmesi": "2026-11-04",
-      "https://teknoloji.marmara.edu.tr/notice/teknoloji-fakultesi-2025-2026-mezuniyet-toreni": "2026-11-09"
+      "https://teknoloji.marmara.edu.tr/notice/teknoloji-fakultesi-2025-2026-mezuniyet-toreni": "2026-11-09",
+      "https://teknoloji.marmara.edu.tr/notice/2025-2026-egitim-ogretim-yili-bolumlerimizde-ve-fakultemizde-dereceye-giren-ogrenciler": "2026-11-23"
     }
   },
   "ubf.marmara.edu.tr": {
