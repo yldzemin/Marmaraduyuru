@@ -429,6 +429,26 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Birbirini Geliştiren Kadınlar Programı",
+        "tarih": "24.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/birbirini-gelistiren-kadinlar-programi"
+      },
+      {
+        "baslik": "Women in Energy Days",
+        "tarih": "24.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/women-in-energy-days"
+      },
+      {
+        "baslik": "13. İnovasyon Yarışması Başvuru",
+        "tarih": "24.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/13-inovasyon-yarismasi-basvuru"
+      },
+      {
+        "baslik": "Hannover Fairs Turkey Uzun Dönem Staj İlanı",
+        "tarih": "24.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/hannover-fairs-turkey-uzun-donem-staj-ilani"
+      },
+      {
         "baslik": "YEO - Purchasing Specialist İlanı",
         "tarih": "19.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/yeo-purchasing-specialist-ilani"
@@ -482,26 +502,6 @@
         "baslik": "Turkcell Yarının Teknoloji Liderleri - 3. Sezon Duyurusu",
         "tarih": "09.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/turkcell-yarinin-teknoloji-liderleri-3-sezon-duyurusu"
-      },
-      {
-        "baslik": "İş İlanı | Turizm Satış ve Rezervasyon Sorumlusu",
-        "tarih": "09.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/is-ilani-turizm-satis-ve-rezervasyon-sorumlusu"
-      },
-      {
-        "baslik": "AIESEC FIRSATLARI",
-        "tarih": "09.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/aiesec-firsatlari"
-      },
-      {
-        "baslik": "UZUN DÖNEM İNSAN KAYNAKLARI STAJYERİ - Metasis Teknoloji",
-        "tarih": "09.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-insan-kaynaklari-stajyeri-metasis-teknoloji"
-      },
-      {
-        "baslik": "Seyrüsefer Sistemleri Speed Bootcamp Seyrüsefer Başvuruları Devam Ediyor!",
-        "tarih": "05.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/seyrusefer-sistemleri-speed-bootcamp-seyrusefer-basvurulari-devam-ediyor"
       }
     ],
     "gecmis": {
@@ -551,7 +551,11 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/selda-jewellery-staj-ilani": "2026-11-19",
       "https://kariyermerkezi.marmara.edu.tr/notice/step-up-inclusive-programi": "2026-11-19",
       "https://kariyermerkezi.marmara.edu.tr/notice/ticrom-teknoloji-satis-ve-kalite-kontrol-personeli-is-ilani": "2026-11-19",
-      "https://kariyermerkezi.marmara.edu.tr/notice/ulusal-staj-programi-1": "2026-11-19"
+      "https://kariyermerkezi.marmara.edu.tr/notice/ulusal-staj-programi-1": "2026-11-19",
+      "https://kariyermerkezi.marmara.edu.tr/notice/aiesec-firsatlari": "2026-11-24",
+      "https://kariyermerkezi.marmara.edu.tr/notice/is-ilani-turizm-satis-ve-rezervasyon-sorumlusu": "2026-11-24",
+      "https://kariyermerkezi.marmara.edu.tr/notice/seyrusefer-sistemleri-speed-bootcamp-seyrusefer-basvurulari-devam-ediyor": "2026-11-24",
+      "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-insan-kaynaklari-stajyeri-metasis-teknoloji": "2026-11-24"
     }
   },
   "mitto.marmara.edu.tr": {
@@ -726,6 +730,11 @@
   },
   "sks.marmara.edu.tr": {
     "sayfa": [
+      {
+        "baslik": "İŞKUR Gençlik Programı Yedek Listeler Belirlendi",
+        "tarih": "24.11.2026",
+        "link": "https://sks.marmara.edu.tr/notice/iskur-genclik-programi-yedek-listeler-belirlendi"
+      },
       {
         "baslik": "Avrupa'nın Zirvesinde Bir Marmara Fırtınası: Tiran’da Tarihi Şampiyonluk!",
         "tarih": "14.09.2026",
@@ -1108,6 +1117,11 @@
   },
   "www.marmara.edu.tr": {
     "sayfa": [
+      {
+        "baslik": "Akademik İlan",
+        "tarih": "24.11.2026",
+        "link": "https://www.marmara.edu.tr/notice/akademik-ilan-36"
+      },
       {
         "baslik": "Erasmus+ Program Ülkeleri (Avrupa içi KA131) Personel Ders Verme ve Eğitim Alma Hareketlilikleri Başvuruları",
         "tarih": "12.11.2026",
