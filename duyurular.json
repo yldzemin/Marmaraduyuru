@@ -429,6 +429,21 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Görsel sanatlar ve sanat tarihi öğrencileriniz için iş fırsatı",
+        "tarih": "25.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/gorsel-sanatlar-ve-sanat-tarihi-ogrencileriniz-icin-is-firsati"
+      },
+      {
+        "baslik": "Beyçelik Gestamp Staj Programı",
+        "tarih": "25.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/beycelik-gestamp-staj-programi"
+      },
+      {
+        "baslik": "ASELSAN a Yetenek 3 Programı Başvuru",
+        "tarih": "25.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/aselsan-a-yetenek-3-programi-basvuru"
+      },
+      {
         "baslik": "Birbirini Geliştiren Kadınlar Programı",
         "tarih": "24.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/birbirini-gelistiren-kadinlar-programi"
@@ -487,21 +502,6 @@
         "baslik": "Canovate - Bilgisayar Mühendisi İlanı",
         "tarih": "19.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/canovate-bilgisayar-muhendisi-ilani"
-      },
-      {
-        "baslik": "2D GAME ARTIST",
-        "tarih": "09.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/2d-game-artist"
-      },
-      {
-        "baslik": "Henkel Step Up Inclusive Programı",
-        "tarih": "09.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/henkel-step-up-inclusive-programi"
-      },
-      {
-        "baslik": "Turkcell Yarının Teknoloji Liderleri - 3. Sezon Duyurusu",
-        "tarih": "09.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/turkcell-yarinin-teknoloji-liderleri-3-sezon-duyurusu"
       }
     ],
     "gecmis": {
@@ -555,7 +555,10 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/aiesec-firsatlari": "2026-11-24",
       "https://kariyermerkezi.marmara.edu.tr/notice/is-ilani-turizm-satis-ve-rezervasyon-sorumlusu": "2026-11-24",
       "https://kariyermerkezi.marmara.edu.tr/notice/seyrusefer-sistemleri-speed-bootcamp-seyrusefer-basvurulari-devam-ediyor": "2026-11-24",
-      "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-insan-kaynaklari-stajyeri-metasis-teknoloji": "2026-11-24"
+      "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-insan-kaynaklari-stajyeri-metasis-teknoloji": "2026-11-24",
+      "https://kariyermerkezi.marmara.edu.tr/notice/2d-game-artist": "2026-11-25",
+      "https://kariyermerkezi.marmara.edu.tr/notice/henkel-step-up-inclusive-programi": "2026-11-25",
+      "https://kariyermerkezi.marmara.edu.tr/notice/turkcell-yarinin-teknoloji-liderleri-3-sezon-duyurusu": "2026-11-25"
     }
   },
   "mitto.marmara.edu.tr": {
