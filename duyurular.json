@@ -105,11 +105,6 @@
         "link": "https://bapko.marmara.edu.tr/notice/2026-yili-mali-yil-sonu-kapanis-islemleri-hakkinda-duyuru"
       },
       {
-        "baslik": "ADEP VE NAP PROJELERİ 2027 BAŞVURU ÇAĞRISI",
-        "tarih": "16.10.2026",
-        "link": "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi"
-      },
-      {
         "baslik": "BAPSİS Kullanımına Yönelik Bilgilendirme Eğitimi Gerçekleştirildi",
         "tarih": "14.10.2026",
         "link": "https://bapko.marmara.edu.tr/notice/bapsis-kullanimina-yonelik-bilgilendirme-egitimi-gerceklestirildi"
@@ -135,7 +130,9 @@
         "link": "https://bapko.marmara.edu.tr/notice/projelerde-bursiyer-calistirilmasina-iliskin-esaslar"
       }
     ],
-    "gecmis": {}
+    "gecmis": {
+      "https://bapko.marmara.edu.tr/notice/adep-ve-nap-projeleri-2027-basvuru-cagrisi": "2026-11-27"
+    }
   },
   "eng.marmara.edu.tr": {
     "sayfa": [
@@ -429,6 +426,21 @@
   "kariyermerkezi.marmara.edu.tr": {
     "sayfa": [
       {
+        "baslik": "Boyner olarak, Türkiye genelindeki mağazalarımızda görevlendirilmek üzere Part Time ekip arkadaşları arıyoruz.",
+        "tarih": "27.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/boyner-olarak-turkiye-genelindeki-magazalarimizda-gorevlendirilmek-uzere-part-time-ekip-arkadaslari-ariyoruz"
+      },
+      {
+        "baslik": "Mavili Elektronik Dış Ticaret Personel İlanı Hk.",
+        "tarih": "27.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/mavili-elektronik-dis-ticaret-personel-ilani-hk"
+      },
+      {
+        "baslik": "Halkbank Gençİz 2026: The Network Effect",
+        "tarih": "27.11.2026",
+        "link": "https://kariyermerkezi.marmara.edu.tr/notice/halkbank-genciz-2026-the-network-effect"
+      },
+      {
         "baslik": "Görsel sanatlar ve sanat tarihi öğrencileriniz için iş fırsatı",
         "tarih": "25.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/gorsel-sanatlar-ve-sanat-tarihi-ogrencileriniz-icin-is-firsati"
@@ -487,21 +499,6 @@
         "baslik": "Gönüllü Stajyer Başvuruları Türkiye Disleksi Vakfı",
         "tarih": "19.11.2026",
         "link": "https://kariyermerkezi.marmara.edu.tr/notice/gonullu-stajyer-basvurulari-turkiye-disleksi-vakfi"
-      },
-      {
-        "baslik": "İspanyolca ve İtalyanca Turist Rehberi İlanı",
-        "tarih": "19.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/ispanyolca-ve-italyanca-turist-rehberi-ilani"
-      },
-      {
-        "baslik": "İhale Yazılım Stajyeri ve Kurumsal Satış Yöneticisi İlanları",
-        "tarih": "19.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/ihale-yazilim-stajyeri-ve-kurumsal-satis-yoneticisi-ilanlari"
-      },
-      {
-        "baslik": "Canovate - Bilgisayar Mühendisi İlanı",
-        "tarih": "19.11.2026",
-        "link": "https://kariyermerkezi.marmara.edu.tr/notice/canovate-bilgisayar-muhendisi-ilani"
       }
     ],
     "gecmis": {
@@ -558,7 +555,10 @@
       "https://kariyermerkezi.marmara.edu.tr/notice/uzun-donem-insan-kaynaklari-stajyeri-metasis-teknoloji": "2026-11-24",
       "https://kariyermerkezi.marmara.edu.tr/notice/2d-game-artist": "2026-11-25",
       "https://kariyermerkezi.marmara.edu.tr/notice/henkel-step-up-inclusive-programi": "2026-11-25",
-      "https://kariyermerkezi.marmara.edu.tr/notice/turkcell-yarinin-teknoloji-liderleri-3-sezon-duyurusu": "2026-11-25"
+      "https://kariyermerkezi.marmara.edu.tr/notice/turkcell-yarinin-teknoloji-liderleri-3-sezon-duyurusu": "2026-11-25",
+      "https://kariyermerkezi.marmara.edu.tr/notice/canovate-bilgisayar-muhendisi-ilani": "2026-11-27",
+      "https://kariyermerkezi.marmara.edu.tr/notice/ihale-yazilim-stajyeri-ve-kurumsal-satis-yoneticisi-ilanlari": "2026-11-27",
+      "https://kariyermerkezi.marmara.edu.tr/notice/ispanyolca-ve-italyanca-turist-rehberi-ilani": "2026-11-27"
     }
   },
   "mitto.marmara.edu.tr": {
